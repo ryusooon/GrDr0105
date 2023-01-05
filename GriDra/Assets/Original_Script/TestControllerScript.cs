@@ -31,6 +31,8 @@ public class TestControllerScript : MonoBehaviour
     SphereSize BlueSphere;
     Vector3 SphereUp;
     Vector3 SphereReset;
+    [SerializeField] Material Red, Green, Blue;
+    [SerializeField] MeshRenderer NowMaterial;
 
     public int SpherePower;
 
@@ -53,6 +55,8 @@ public class TestControllerScript : MonoBehaviour
 
         SphereUp = new Vector3(UpSpeed, UpSpeed, UpSpeed);
         SphereReset = new Vector3(BlueSphere.X, BlueSphere.Y, BlueSphere.Z);
+
+        NowMaterial.material = Blue;
     }
 
     // Update is called once per frame
@@ -83,10 +87,13 @@ public class TestControllerScript : MonoBehaviour
         if (NowTime < 10)
         {
             PowerCharge();
+            PowerCheck();
         }
 
         NowTime += Time.deltaTime;
         //Debug.Log("NowTime(経過時間):" + NowTime + " SpherePower(弾のサイズ):" + SpherePower);
+
+        Debug.Log("スフィア：" + SpherePower);
 
     }
 
@@ -130,14 +137,56 @@ public class TestControllerScript : MonoBehaviour
         // 経過時間ゼロ
         NowTime = 0;
 
-    }
+        // マテリアルのリセット
+        NowMaterial.material = Blue;
 
+    }
     void GetAE()
     {
         // コントローラーの加速度を取得
         Get.X = VelEstim.GetAccelerationEstimate().x;
         Get.Y = VelEstim.GetAccelerationEstimate().y;
         Get.Z = VelEstim.GetAccelerationEstimate().z;
+    }
+
+    void PowerCheck()
+    {
+        // パワーの数値に合わせてマテリアルを変更する関数
+        
+        if (SpherePower < 300)
+        {
+            // パワーが300未満の場合
+
+            if (NowMaterial != Blue)
+            {
+                // パワーが300未満の状態でマテリアルがBlueじゃない場合
+                NowMaterial.material = Blue;
+            }
+
+        }
+        else if (SpherePower >= 300 && SpherePower < 600)
+        {
+            // パワーが300以上600未満の場合
+            
+            if (NowMaterial != Green)
+            {
+                // パワーが300以上600未満の状態でマテリアルがGreenじゃない場合
+                NowMaterial.material = Green;
+            }
+
+        }
+        else if (SpherePower >= 600)
+        {
+            // パワーが600以上の場合
+
+            if (NowMaterial != Red)
+            {
+                // パワーが600以上の状態でマテリアルがRedじゃない場合
+                NowMaterial.material = Red;
+            }
+
+        }
+
     }
 
 }
