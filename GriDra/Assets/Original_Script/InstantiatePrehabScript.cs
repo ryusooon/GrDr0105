@@ -14,6 +14,8 @@ public class InstantiatePrehabScript : MonoBehaviour
 
     Vector3 Direction1;
 
+    [SerializeField] Material Red, Green, Blue;
+
     public bool PrehabOn;
     public bool ChargeUp;
 
@@ -43,6 +45,8 @@ public class InstantiatePrehabScript : MonoBehaviour
             GameObject NewPrehab;
             Vector3 PrehabVec;
 
+            MeshRenderer NewMaterial;
+
             if (ChargeUp)
             {
                 NewPrehab = Instantiate(ShotPrehab, StartPos.position, Quaternion.identity);
@@ -56,6 +60,9 @@ public class InstantiatePrehabScript : MonoBehaviour
                 ChargeUp = false;
             }
 
+            NewMaterial = NewPrehab.GetComponent<MeshRenderer>();
+            NewMaterial.material = CreateMaterial();
+
             PrehabScript PrehabSc = NewPrehab.GetComponent<PrehabScript>();
             Rigidbody PrehabRb = NewPrehab.GetComponent<Rigidbody>();
 
@@ -65,4 +72,33 @@ public class InstantiatePrehabScript : MonoBehaviour
         }
 
     }
+
+    Material CreateMaterial()
+    {
+
+        Material ChangeMaterial = null;
+
+        // マテリアルを変更する関数
+
+        if (ScaleCount < 8)
+        {
+            ChangeMaterial = Blue;
+        }
+        else if (ScaleCount >= 8 && ScaleCount < 14)
+        {
+            ChangeMaterial = Green;
+
+        }
+        else if (ScaleCount >= 14)
+        {
+            ChangeMaterial = Red;
+        }
+
+
+        return ChangeMaterial;
+
+
+    }
+
+
 }

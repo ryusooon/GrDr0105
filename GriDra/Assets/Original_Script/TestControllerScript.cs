@@ -84,7 +84,7 @@ public class TestControllerScript : MonoBehaviour
 
 
         // 10秒間弾が膨らむ
-        if (NowTime < 10)
+        if (NowTime < 5)
         {
             PowerCharge();
             PowerCheck();
@@ -93,7 +93,7 @@ public class TestControllerScript : MonoBehaviour
         NowTime += Time.deltaTime;
         //Debug.Log("NowTime(経過時間):" + NowTime + " SpherePower(弾のサイズ):" + SpherePower);
 
-        Debug.Log("スフィア：" + SpherePower);
+        Debug.Log("スフィア：" + SpherePower / 20);
 
     }
 
@@ -153,7 +153,7 @@ public class TestControllerScript : MonoBehaviour
     {
         // パワーの数値に合わせてマテリアルを変更する関数
         
-        if (SpherePower < 300)
+        if (SpherePower / 20 < 8)
         {
             // パワーが300未満の場合
 
@@ -164,7 +164,7 @@ public class TestControllerScript : MonoBehaviour
             }
 
         }
-        else if (SpherePower >= 300 && SpherePower < 600)
+        else if (SpherePower / 20 >= 8 && SpherePower / 20 < 14)
         {
             // パワーが300以上600未満の場合
             
@@ -175,7 +175,7 @@ public class TestControllerScript : MonoBehaviour
             }
 
         }
-        else if (SpherePower >= 600)
+        else if (SpherePower / 20 >= 14)
         {
             // パワーが600以上の場合
 
