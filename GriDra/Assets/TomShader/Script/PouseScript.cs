@@ -22,12 +22,12 @@ public class PouseScript : MonoBehaviour
     {
         if (Input.GetKeyDown("u"))
         {
-            Time.timeScale = 0;
+            Time.timeScale = 0.01f;
         }
     }
     public void ReStartGame()
     {
-        if(Time.timeScale == 0)
+        if(Time.timeScale == 0.01f)
         {
             if (Input.GetKeyDown("r"))
             {

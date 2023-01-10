@@ -8,6 +8,10 @@ public class CollisionDetectionScript : MonoBehaviour
     public bool Stan;
     public int StanTime;
 
+    SoundManagerScript soundscript;
+
+    public GameObject gamemanager;
+
     int Time;
 
     // Start is called before the first frame update
@@ -15,6 +19,7 @@ public class CollisionDetectionScript : MonoBehaviour
     {
         Stan = false;
         Time = 0;
+        soundscript = gamemanager.GetComponent<SoundManagerScript>();
     }
 
     // Update is called once per frame
@@ -45,7 +50,9 @@ public class CollisionDetectionScript : MonoBehaviour
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("PlayArea"))  // êßå¿ï«à»äOÇ…Ç‘Ç¬Ç©Ç¡ÇΩÇÁ
         {
-            Stan = true;     
+            Stan = true;
+            soundscript.PlayerSound(2);
+
         }
 
     }
