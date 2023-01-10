@@ -12,6 +12,9 @@ TagManager:
   - Drtama
   - DestroyArea
   - norm
+  - Level1Prehab
+  - Level2Prehab
+  - Level3Prehab
   layers:
   - Default
   - TransparentFX

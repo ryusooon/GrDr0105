@@ -21,6 +21,10 @@ struct SphereSize
 public class TestControllerScript : MonoBehaviour
 {
 
+    SoundManagerScript soundscript;
+
+    public GameObject gamemanager;
+
     [SerializeField] public GameObject Controller;
     [SerializeField] VelocityEstimator VelEstim;
     [SerializeField] AccelerationScript Acceleration;
@@ -33,6 +37,8 @@ public class TestControllerScript : MonoBehaviour
     Vector3 SphereReset;
     [SerializeField] Material Red, Green, Blue;
     [SerializeField] MeshRenderer NowMaterial;
+
+    [SerializeField] CollisionDetectionScript ColDetSc;
 
     public int SpherePower;
 
@@ -56,44 +62,54 @@ public class TestControllerScript : MonoBehaviour
         SphereUp = new Vector3(UpSpeed, UpSpeed, UpSpeed);
         SphereReset = new Vector3(BlueSphere.X, BlueSphere.Y, BlueSphere.Z);
 
+        soundscript = gamemanager.GetComponent<SoundManagerScript>();
+
         NowMaterial.material = Blue;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // トリガー入力中の処理
-        if (NowTriger.PullRight == 1)
+        // スタン状態じゃない場合
+        if (!ColDetSc.Stan)
         {
-            // 加速度取得
-            GetAE();
 
-            // トリガー入力中にコントローラーを振り下ろしたら
-            if (Get.X > ShotValue && Get.Y > ShotValue && SpherePower > 0)
+            // トリガー入力中の処理
+            if (NowTriger.PullRight == 1)
             {
-                Debug.Log("NowTime(経過時間):" + NowTime + " SpherePower(弾のサイズ):" + SpherePower);
+                // 加速度取得
+                GetAE();
 
-                // 弾の生成
-                SphereMove();
+                // トリガー入力中にコントローラーを振り下ろしたら
+                if (Get.X > ShotValue && Get.Y > ShotValue && SpherePower > 0)
+                {
+                    Debug.Log("NowTime(経過時間):" + NowTime + " SpherePower(弾のサイズ):" + SpherePower);
+
+                    // 弾の生成
+                    SphereMove();
+                    soundscript.PlayerSound(1);
+
+                }
+
+                // 確認用
+                Debug.Log("トリガー入力中");
+                Debug.Log("取得加速度→X:" + Get.X + " Y:" + Get.Y + " Z:" + Get.Z);
             }
 
-            // 確認用
-            Debug.Log("トリガー入力中");
-            Debug.Log("取得加速度→X:" + Get.X + " Y:" + Get.Y + " Z:" + Get.Z);
+
+            // 10秒間弾が膨らむ
+            if (NowTime < 5)
+            {
+                PowerCharge();
+                PowerCheck();
+            }
+
+            NowTime += Time.deltaTime;
+            //Debug.Log("NowTime(経過時間):" + NowTime + " SpherePower(弾のサイズ):" + SpherePower);
+
+            Debug.Log("スフィア：" + SpherePower / 20);
+
         }
-
-
-        // 10秒間弾が膨らむ
-        if (NowTime < 5)
-        {
-            PowerCharge();
-            PowerCheck();
-        }
-
-        NowTime += Time.deltaTime;
-        //Debug.Log("NowTime(経過時間):" + NowTime + " SpherePower(弾のサイズ):" + SpherePower);
-
-        Debug.Log("スフィア：" + SpherePower / 20);
 
     }
 

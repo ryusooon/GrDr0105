@@ -63,6 +63,8 @@ public class InstantiatePrehabScript : MonoBehaviour
             NewMaterial = NewPrehab.GetComponent<MeshRenderer>();
             NewMaterial.material = CreateMaterial();
 
+            ChangeTag(NewPrehab, NewMaterial.material);
+
             PrehabScript PrehabSc = NewPrehab.GetComponent<PrehabScript>();
             Rigidbody PrehabRb = NewPrehab.GetComponent<Rigidbody>();
 
@@ -83,6 +85,7 @@ public class InstantiatePrehabScript : MonoBehaviour
         if (ScaleCount < 8)
         {
             ChangeMaterial = Blue;
+
         }
         else if (ScaleCount >= 8 && ScaleCount < 14)
         {
@@ -98,6 +101,26 @@ public class InstantiatePrehabScript : MonoBehaviour
         return ChangeMaterial;
 
 
+    }
+
+
+    void ChangeTag(GameObject newPrehab, Material newMaterial)
+    {
+
+        if (newMaterial == Blue)
+        {
+            newPrehab.tag = "Level1Prehab";
+        }
+        else if (newMaterial == Green)
+        {
+            newPrehab.tag = "Level2Prehab";
+        }
+        else if (newMaterial == Red)
+        {
+            newPrehab.tag = "Level3Prehab";
+        }
+
+    
     }
 
 
