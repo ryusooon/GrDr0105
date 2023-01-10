@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8064563104863921801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8064563104863921802}
+  - component: {fileID: 8064563104863921803}
+  - component: {fileID: 8064563104863921796}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8064563104863921802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064563104863921801}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8064563104863921803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064563104863921801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179eae79d60465f4ca474c0e8b6072c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastbattle: 0
+  Drtext: {fileID: 0}
+--- !u!114 &8064563104863921796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064563104863921801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762a22709058cc44aa51299930e493e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Magicsound: {fileID: 8300000, guid: 65ba699cde1769e4abf4d65ba10f4e1a, type: 3}
+  BGM: {fileID: 8300000, guid: f7a0ae573493a9547a715f5d48ed53b5, type: 3}
+  impact: {fileID: 8300000, guid: 7ef96437b40a4464e8ffe258a96e7c56, type: 3}
+  tailatk: {fileID: 8300000, guid: eefc5027966269b47bb62792d2ebc312, type: 3}
+  wing: {fileID: 8300000, guid: 6a3956e9a3c15294e8d11c385c62c9d7, type: 3}
+  bark: {fileID: 8300000, guid: df307792eaeca084bb76f478aab0da06, type: 3}
+  fireball: {fileID: 8300000, guid: 57f395b73c6e71248845dac9f46e7177, type: 3}
+  house: {fileID: 0}
+  body: {fileID: 0}
+  head: {fileID: 0}
+  tail: {fileID: 0}
+  Righthand: {fileID: 0}
+  PlayerHead: {fileID: 0}

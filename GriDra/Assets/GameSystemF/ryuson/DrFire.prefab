@@ -127,4 +127,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireObj: {fileID: 4380846293888938189}
   head: {fileID: 724540658604359126, guid: 28562c54c13ce1e44a2acc7f63cec4d4, type: 3}
+  gamemanager: {fileID: 8064563104863921801, guid: b32a8b7a2c4944a48b412bb179bad196, type: 3}
   Tracking: 1

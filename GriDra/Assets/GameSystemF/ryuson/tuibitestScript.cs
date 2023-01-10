@@ -8,7 +8,9 @@ public class tuibitestScript : MonoBehaviour
     private Transform target; //prefab‰»‚µ‚½Obj‚Ìê‡‚»‚ê‚Ì‰Šú‚ÍˆÊ’u‚ÌTransform‚µ‚©‚Æ‚ç‚È‚¢‚©‚ç“®“I‚ÉPlayer‚ÌˆÊ’u‚ğŒŸõ‚Å‚«‚é‚æ‚¤‚ÉTag‚Ã‚¯‚µ‚Ä‚¨‚­9/5
     private GameObject tag;
     public GameObject head;
+    SoundManagerScript soundscript;
 
+    public GameObject gamemanager;
 
     private GameObject Fobj;
     private Rigidbody Rb;
@@ -52,6 +54,10 @@ public class tuibitestScript : MonoBehaviour
             Tracking = false;
         }
 
-        if(other.tag == "DestroyArea")Destroy(this.gameObject);
+        if (other.tag == "DestroyArea")
+        {
+            soundscript.Gimmick(1);
+            Destroy(this.gameObject);
+        }
     }
 }

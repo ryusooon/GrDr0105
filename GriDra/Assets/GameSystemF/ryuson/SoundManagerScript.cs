@@ -8,23 +8,24 @@ public class SoundManagerScript : MonoBehaviour
     public AudioClip Magicsound;  //Ç±Ç±Ç…égÇ§éÌóﬁÇæÇØâπÇí«â¡ÇµÇƒÇ¢Ç≠
     public AudioClip BGM;
     public AudioClip impact;
-    public AudioClip avoid;
+    //public AudioClip avoid;
+    public AudioClip tailatk;
 
     public AudioClip wing;  
     public AudioClip bark;
-    public AudioClip fear;
-    public AudioClip final;
+    //public AudioClip fear;
+   // public AudioClip final;
 
     public AudioClip fireball;
-    public AudioClip firebless;
-    public AudioClip collapse;
+    //public AudioClip firebless;
+    //public AudioClip collapse;
 
     public AudioClip house;
-    public AudioClip stone;
+   // public AudioClip stone;
 
 
-    public AudioClip sea;
-    public AudioClip river;
+    //public AudioClip sea;
+    //public AudioClip river;
 
     AudioSource audioSource;
 
@@ -77,12 +78,9 @@ public class SoundManagerScript : MonoBehaviour
                 audioSource.PlayOneShot(bark);
                 break;
             case 3:
-                audioSource.PlayOneShot(fear);
+                audioSource.PlayOneShot(tailatk);
                 break;
             case 4:
-                audioSource.PlayOneShot(final);
-                break;
-            case 5:
                 audioSource.PlayOneShot(fireball);
                 break;
 
@@ -109,7 +107,7 @@ public class SoundManagerScript : MonoBehaviour
                 audioSource.PlayOneShot(impact); //è’åÇâπ(ÉSÅ[ÉOÉã)  <Å[ÇæÇ©ÇÁÇ±Ç±Ç≈ÇÕGetcomponentÇÉSÅ[ÉOÉãÇ©ÇÁÇ∑ÇÈÇÊÇ§Ç…Ç∑ÇÈ
                 break;
             case 3:
-                audioSource.PlayOneShot(avoid);  //âÒîâπ(ÉSÅ[ÉOÉã)  
+                //audioSource.PlayOneShot(avoid);  //âÒîâπ(ÉSÅ[ÉOÉã)  
                 break;
 
             default: break;
@@ -123,7 +121,7 @@ public class SoundManagerScript : MonoBehaviour
         switch (type)
         {
             case 1:
-                audioSource.PlayOneShot(Magicsound);  //â∆ì|âÛ
+                audioSource.PlayOneShot(house);  //â∆ì|âÛ
                 break;
             case 2:
                 audioSource.PlayOneShot(impact);Å@//êŒïˆâÛ
