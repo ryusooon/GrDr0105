@@ -87,7 +87,8 @@ public class TestControllerScript : MonoBehaviour
 
                     // ’e‚Ì¶¬
                     SphereMove();
-                    soundscript.PlayerSound(1);
+                    //soundscript.PlayerSound(1);
+                    // ª‚ğInstantiatePrehabScript‚Ö
 
                 }
 

@@ -60,6 +60,8 @@ public class InstantiatePrehabScript : MonoBehaviour
                 ChargeUp = false;
             }
 
+            // ‚±‚±‚É‰¹—Š‚Þ
+
             NewMaterial = NewPrehab.GetComponent<MeshRenderer>();
             NewMaterial.material = CreateMaterial();
 

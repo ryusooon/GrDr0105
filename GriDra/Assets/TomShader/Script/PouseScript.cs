@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PouseScript : MonoBehaviour
 {
+    public GameObject three;
+    public GameObject two;
+    public GameObject one;
+    public GameObject go;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +46,7 @@ public class PouseScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                three.SetActive(true);
                 Time.timeScale = 1;
             }
         }
