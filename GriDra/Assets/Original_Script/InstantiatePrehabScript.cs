@@ -62,10 +62,12 @@ public class InstantiatePrehabScript : MonoBehaviour
 
             // ‚±‚±‚É‰¹—Š‚Þ
 
+            /*
             NewMaterial = NewPrehab.GetComponent<MeshRenderer>();
             NewMaterial.material = CreateMaterial();
 
             ChangeTag(NewPrehab, NewMaterial.material);
+            */
 
             PrehabScript PrehabSc = NewPrehab.GetComponent<PrehabScript>();
             Rigidbody PrehabRb = NewPrehab.GetComponent<Rigidbody>();
