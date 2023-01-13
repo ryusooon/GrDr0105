@@ -18,6 +18,9 @@ public class MovePointScript : MonoBehaviour
 
     public float Y_Difference;
 
+    public float X_Difference;
+    public float Z_Difference;
+
     public Transform plane;
     public Vector3 Rote;
 
@@ -29,6 +32,9 @@ public class MovePointScript : MonoBehaviour
 
         StandardPos = To_Sphere.position;
         Y_Difference = StandardPos.y - BoxPosvec.y;
+
+        X_Difference = StandardPos.x - BoxPosvec.x;
+        Z_Difference = StandardPos.z - BoxPosvec.z;
     }
 
     // Update is called once per frame
@@ -63,8 +69,12 @@ public class MovePointScript : MonoBehaviour
         // 基準Y軸値とボックスY軸値の差分を記録
         Y_Difference = StandardPos.y - BoxPosvec.y;
 
+        X_Difference = StandardPos.x - BoxPosvec.x;
+        Z_Difference = StandardPos.z - BoxPosvec.z;
+
         // 差分を使ってtmpを更新させる
         tmp = new Vector3(0, StandardPos.y - BoxPosvec.y, 0);
+        //tmp = new Vector3(StandardPos.x - BoxPosvec.x, 0, StandardPos.z - BoxPosvec.z);
 
         // 現在の位置に加算して反映させる
         PointBox.position = BoxPosvec + tmp;

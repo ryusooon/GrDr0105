@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HitScript2 : MonoBehaviour
 {
+    string HitName;
 
     public bool Left;
     public bool Right;
@@ -19,79 +20,45 @@ public class HitScript2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Left || Right)
+        {
+            LeftRightCheck();
+        }
+
+    }
+
+    void LeftRightCheck()
+    {
+        if (HitName == "LeftZone1" || HitName == "RightZone1")
+        {
+            PlayScri.MoveSpeed2 = 6.0f;
+        }
+        else if (HitName == "LeftZone2" || HitName == "RightZone2")
+        {
+            PlayScri.MoveSpeed2 = 12.0f;
+        }
     }
 
     void OnTriggerStay(Collider other)
     {
-       // Debug.Log("weeeeeee");
+        // Debug.Log("weeeeeee");
 
-        if (other.name == "LeftZone1")
+        if (other.name == "LeftZone1" || other.name == "LeftZone2")
         {
-           // Debug.Log("左へ受け流す1");  //応急処置
-            PlayScri.MoveSpeed2 = 5.0f;
+            HitName = other.name;
             Left = true;
         }
-
-        if (other.name == "LeftZone2")
+        else if (other.name == "RightZone1" || other.name == "RightZone2")
         {
-           // Debug.Log("左へ受け流す2");  //応急処置
-            PlayScri.MoveSpeed2 = 12.0f;
-            Left = true;
-        }
-
-        if (other.name == "RightZone1")
-        {
-           // Debug.Log("右の頬をビンタ1");
-            PlayScri.MoveSpeed2 = 5.0f;
+            HitName = other.name;
             Right = true;
         }
-
-        if (other.name == "RightZone2")
+        else
         {
-            //Debug.Log("右の頬をビンタ2");
-            PlayScri.MoveSpeed2 = 12.0f;
-            Right = true;
-        }
-
-        if (other.name == "ZeroZone")
-        {
-           // Debug.Log("ゼロ地点だお");
+            HitName = "null";
             PlayScri.MoveSpeed2 = 0.0f;
-            Right = false;
             Left = false;
-        }
-
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.name == "LeftZone1")
-        {
-           // Debug.Log("ひだり当たってない1");
-            PlayScri.MoveSpeed2 = 2.5f;
-            Left = false;
-        }
-
-        if (other.name == "LeftZone2")
-        {
-           // Debug.Log("ひだり当たってない2");
-            PlayScri.MoveSpeed2 = 5.0f;
-            Left = false;
-        }
-
-
-        if (other.name == "RightZone1")
-        {
-          //  Debug.Log("みぎ当たってない1");
-            PlayScri.MoveSpeed2 = 2.5f;
-            Right = false;
-        }
-
-        if (other.name == "RightZone2")
-        {
-          //  Debug.Log("みぎ当たってない2");
-            PlayScri.MoveSpeed2 = 5.0f;
             Right = false;
         }
 
