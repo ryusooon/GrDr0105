@@ -14,7 +14,7 @@ public class InstantiatePrehabScript : MonoBehaviour
 
     Vector3 Direction1;
 
-    [SerializeField] Material Red, Green, Blue;
+    //[SerializeField] Material Red, Green, Blue;
 
     public bool PrehabOn;
     public bool ChargeUp;
@@ -69,6 +69,8 @@ public class InstantiatePrehabScript : MonoBehaviour
             ChangeTag(NewPrehab, NewMaterial.material);
             */
 
+            ChangeTag(NewPrehab);
+
             PrehabScript PrehabSc = NewPrehab.GetComponent<PrehabScript>();
             Rigidbody PrehabRb = NewPrehab.GetComponent<Rigidbody>();
 
@@ -79,47 +81,52 @@ public class InstantiatePrehabScript : MonoBehaviour
 
     }
 
-    Material CreateMaterial()
+    //Material CreateMaterial()
+    //{
+
+    //    Material ChangeMaterial = null;
+
+    //    // マテリアルを変更する関数
+
+    //    if (ScaleCount < 8)
+    //    {
+    //        ChangeMaterial = Blue;
+
+    //    }
+    //    else if (ScaleCount >= 8 && ScaleCount < 14)
+    //    {
+    //        ChangeMaterial = Green;
+
+    //    }
+    //    else if (ScaleCount >= 14)
+    //    {
+    //        ChangeMaterial = Red;
+    //    }
+
+
+    //    return ChangeMaterial;
+
+
+    //}
+
+
+
+    //void ChangeTag(GameObject newPrehab, Material newMaterial)
+    void ChangeTag(GameObject newPrehab)
     {
 
-        Material ChangeMaterial = null;
-
-        // マテリアルを変更する関数
-
+        //if (newMaterial == Blue)
         if (ScaleCount < 8)
-        {
-            ChangeMaterial = Blue;
-
-        }
-        else if (ScaleCount >= 8 && ScaleCount < 14)
-        {
-            ChangeMaterial = Green;
-
-        }
-        else if (ScaleCount >= 14)
-        {
-            ChangeMaterial = Red;
-        }
-
-
-        return ChangeMaterial;
-
-
-    }
-
-
-    void ChangeTag(GameObject newPrehab, Material newMaterial)
-    {
-
-        if (newMaterial == Blue)
         {
             newPrehab.tag = "Level1Prehab";
         }
-        else if (newMaterial == Green)
+        //else if (newMaterial == Green)
+        else if (ScaleCount >= 8 && ScaleCount < 14)
         {
             newPrehab.tag = "Level2Prehab";
         }
-        else if (newMaterial == Red)
+        //else if (newMaterial == Red)
+        else if (ScaleCount >= 14)
         {
             newPrehab.tag = "Level3Prehab";
         }
