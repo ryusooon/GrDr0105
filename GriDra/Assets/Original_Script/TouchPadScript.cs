@@ -12,8 +12,8 @@ public class TouchPadScript : MonoBehaviour
 
     bool TrackPadTouch;
 
-    [SerializeField] MovePointScript ToX1;
-    [SerializeField] MovePointScript ToZ2;
+    //[SerializeField] MovePointScript ToX1;
+    //[SerializeField] MovePointScript ToZ2;
 
     public GameObject countObj; //CountObject、CountDownScriptの有効化、無効化をするのに使用 //冨岡
     public GameObject countCanv;　//CountDownCanvsの表示、非表示の切り替えに使用　//冨岡

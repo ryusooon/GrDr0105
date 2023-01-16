@@ -35,6 +35,16 @@ public class PlayerScript : MonoBehaviour
     public float MoveSpeed1;
     public float MoveSpeed2;
 
+    public string LookDirection;
+
+    // existing components on the GameObject
+    AnimationClip clip;
+    Animator anim;
+
+    // new event created
+    AnimationEvent evt;
+
+
     //public float ForcePower = 0.25f;
     //public float MaxVal = 1.5f;
 
@@ -54,6 +64,19 @@ public class PlayerScript : MonoBehaviour
         Center_x = MyObj.transform.position.x;
         Center_y = MyObj.transform.position.y;
         Center_z = MyObj.transform.position.z;
+
+        LookDirection = "North";
+
+        // アニメーション関係
+        evt = new AnimationEvent();
+
+        evt.intParameter = 12345;
+        evt.time = 1.3f;
+        evt.functionName = "";
+
+        anim = GetComponent<Animator>();
+        clip = anim.runtimeAnimatorController.animationClips[0];
+        clip.AddEvent(evt);
     }
 
     // Update is called once per frame
@@ -62,6 +85,8 @@ public class PlayerScript : MonoBehaviour
         MyVec = DirectionObject.transform.up;
         //Debug.Log("MyVec:" + MyVec);
 
+        ForceCheck();
+
         Debug.Log("MyVecX:" + MyVec.x);
         Debug.Log("MyVecY:" + MyVec.y);
         Debug.Log("MyVecZ:" + MyVec.z);
@@ -69,11 +94,11 @@ public class PlayerScript : MonoBehaviour
         Up_Force = new Vector3(0f, MoveSpeed1, 0f);
         Down_Force = new Vector3(0f, -MoveSpeed1, 0f);
 
-        Left_Force_X = new Vector3(-MoveSpeed2, 0f, -MoveSpeed2);
-        Right_Force_X = new Vector3(MoveSpeed2, 0f, MoveSpeed2);
+        //Left_Force_X = new Vector3(-MoveSpeed2, 0f, -MoveSpeed2);
+        //Right_Force_X = new Vector3(MoveSpeed2, 0f, MoveSpeed2);
 
-        Left_Force_Z = new Vector3(MoveSpeed2, 0f, -MoveSpeed2);
-        Right_Force_Z = new Vector3(-MoveSpeed2, 0f, MoveSpeed2);
+        //Left_Force_Z = new Vector3(MoveSpeed2, 0f, -MoveSpeed2);
+        //Right_Force_Z = new Vector3(-MoveSpeed2, 0f, MoveSpeed2);
     }
 
     void FixedUpdate()
@@ -139,8 +164,6 @@ public class PlayerScript : MonoBehaviour
         {
             MyRig.velocity = Vector3.zero;
         }
-
-
 
     }
 
@@ -278,5 +301,51 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("Right");
 
     }
+
+    // イベントから方角を取得
+    public void PrintEvent(string s)
+    {
+        LookDirection = s;
+    }
+
+    void ForceCheck()
+    {
+        // LookDirectionを元に向いている方角と、方角に合わせて掛けるべき力のパターンを判別
+
+        if (LookDirection == "North")
+        {
+            Left_Force_X = new Vector3(-MoveSpeed2, 0f, -MoveSpeed2);
+            Right_Force_X = new Vector3(MoveSpeed2, 0f, MoveSpeed2);
+
+            Left_Force_Z = new Vector3(MoveSpeed2, 0f, -MoveSpeed2);
+            Right_Force_Z = new Vector3(-MoveSpeed2, 0f, MoveSpeed2);
+        }
+        else if (LookDirection == "West")
+        {
+            Left_Force_X = new Vector3(MoveSpeed2, 0f, 0f);
+            Right_Force_X = new Vector3(-MoveSpeed2, 0f, 0f);
+
+            Left_Force_Z = new Vector3(0f, 0f, MoveSpeed2);
+            Right_Force_Z = new Vector3(0f, 0f, -MoveSpeed2);
+        }
+        else if (LookDirection == "South")
+        {
+            Left_Force_X = new Vector3(0f, 0f, -MoveSpeed2);
+            Right_Force_X = new Vector3(0f, 0f, MoveSpeed2);
+
+            Left_Force_Z = new Vector3(MoveSpeed2, 0f, 0f);
+            Right_Force_Z = new Vector3(-MoveSpeed2, 0f, 0f);
+        }
+        else if (LookDirection == "East")
+        {
+            Left_Force_X = new Vector3(0f, 0f, MoveSpeed2);
+            Right_Force_X = new Vector3(0f, 0f, -MoveSpeed2);
+
+            Left_Force_Z = new Vector3(-MoveSpeed2, 0f, 0f);
+            Right_Force_Z = new Vector3(MoveSpeed2, 0f, 0f);
+        }
+
+    }
+
 
 }

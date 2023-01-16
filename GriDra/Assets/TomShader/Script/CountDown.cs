@@ -22,6 +22,10 @@ public class CountDown : MonoBehaviour
     public GameObject countobj; //CountObject、CountDownScriptの有効化、無効化をするのに使用
     public GameObject countcanv; //CountDownCanvsの表示、非表示の切り替えに使用
 
+    // ↓築花追記
+    [SerializeField] MovePointScript ToX1;
+    [SerializeField] MovePointScript ToZ2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,12 +56,20 @@ public class CountDown : MonoBehaviour
         if (countTime < 3)
         {
             Count.sprite = two;
+
+            // ↓築花追記
+            ToX1.ReSet = !ToX1.ReSet;
+            ToZ2.ReSet = !ToZ2.ReSet;
         }
 
         //タイマー(countTime)が2未満の時画像1を表示
         if (countTime < 2)
         {
             Count.sprite = one;
+
+            // ↓築花追記
+            ToX1.ReSet = !ToX1.ReSet;
+            ToZ2.ReSet = !ToZ2.ReSet;
         }
 
         //タイマー(countTime)が1未満の時画像startを表示
