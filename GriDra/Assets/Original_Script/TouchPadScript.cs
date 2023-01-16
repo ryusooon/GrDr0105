@@ -15,13 +15,16 @@ public class TouchPadScript : MonoBehaviour
     [SerializeField] MovePointScript ToX1;
     [SerializeField] MovePointScript ToZ2;
 
+    public GameObject countObj; //CountObject、CountDownScriptの有効化、無効化をするのに使用 //冨岡
+    public GameObject countCanv;　//CountDownCanvsの表示、非表示の切り替えに使用　//冨岡
+
     //private Vector2 pos;
     //float r, sita;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
@@ -30,16 +33,21 @@ public class TouchPadScript : MonoBehaviour
 
         if (Teleport.GetStateDown(hand))
         {
-            ToX1.ReSet = !ToX1.ReSet;
-            ToZ2.ReSet = !ToZ2.ReSet;
+            Time.timeScale = 0.01f; //冨岡
+            countCanv.SetActive(true); //冨岡
+
+            //リセット処理切り替え
+            //ToX1.ReSet = !ToX1.ReSet;
+            //ToZ2.ReSet = !ToZ2.ReSet;
 
             //TrackPadTouch = !TrackPadTouch;
             Debug.Log("パッド入力！");
         }
         else if (Teleport.GetStateUp(hand))
         {
-            ToX1.ReSet = !ToX1.ReSet;
-            ToZ2.ReSet = !ToZ2.ReSet;
+            //リセット処理切り替え
+            //ToX1.ReSet = !ToX1.ReSet;
+            //ToZ2.ReSet = !ToZ2.ReSet;
 
             //TrackPadTouch = !TrackPadTouch;
             Debug.Log("パッドから指を放した！");
@@ -54,7 +62,10 @@ public class TouchPadScript : MonoBehaviour
         //Debug.Log("パッド：" + r + " " + sita);
         //Debug.Log("パッド：" + pos.x + " " + pos.y);
 
-
-
+        //Escキーを押した時カウントダウンを開始してゲームを再開(ここボタン配置するなりしてゲーム内から操作できるようにする) //冨岡
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            countObj.GetComponent<CountDown>().enabled = true;
+        }
     }
 }

@@ -25,6 +25,7 @@ public class LaserPointerHandlerScript : MonoBehaviour
         {
             GameObject startbutton = GameObject.Find("StartButton");
             startbutton.GetComponent<Renderer>().material.color = Color.red;
+            Time.timeScale = 0.01f;
             SceneManager.LoadScene("MainScene");
         }
 

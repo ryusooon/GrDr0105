@@ -22,7 +22,7 @@ public class RubbleShot : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "Drtama")
+        if (other.tag == "Dragon" || other.tag == "Drtama")
         {
             var shot = Instantiate(rubble, transform.position, Quaternion.identity);
             shot.GetComponent<Rigidbody>().velocity = transform.forward.normalized * rubbleSpeed;
