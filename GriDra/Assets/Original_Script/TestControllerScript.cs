@@ -114,7 +114,7 @@ public class TestControllerScript : MonoBehaviour
             NowTime += Time.deltaTime;
             //Debug.Log("NowTime(経過時間):" + NowTime + " SpherePower(弾のサイズ):" + SpherePower);
 
-            Debug.Log("スフィア：" + SpherePower / 20);
+            //Debug.Log("スフィア：" + SpherePower / 20);
 
         }
 

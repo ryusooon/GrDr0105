@@ -45,7 +45,7 @@ public class PrehabScript : MonoBehaviour
             PrehabRb.AddForce(Direction * Power);
         }
 
-        Debug.Log("Direction:" + Direction);
+        //Debug.Log("Direction:" + Direction);
 
         Destroy(this.gameObject, DestryTime);
 
