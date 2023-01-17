@@ -5014,9 +5014,23 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 36.216667
+    functionName: ScaleChange_Y_Up
+    data: 2.0
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 2
+    intParameter: 0
+    messageOptions: 0
   - time: 48.75
     functionName: StringParameter
     data: East
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 56.2
+    functionName: ScaleChange_Y_Down
+    data: 0.0
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -5063,6 +5077,20 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 129.23334
+    functionName: ScaleChange_X_Up
+    data: 2.0
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 2
+    intParameter: 0
+    messageOptions: 0
+  - time: 136.65
+    functionName: ScaleChange_X_Down
+    data: 0.0
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 141.66667
     functionName: StringParameter
     data: South
@@ -5070,9 +5098,23 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 145.11667
+    functionName: ScaleChange_Y_Up
+    data: 2.0
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 2
+    intParameter: 0
+    messageOptions: 0
   - time: 151.78334
     functionName: StringParameter
     data: East
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 153.7
+    functionName: ScaleChange_Y_Down
+    data: 0.0
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

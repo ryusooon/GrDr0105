@@ -6,6 +6,7 @@ public class BoxScaleScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public float ScaleChangeValue;
+    public float ChangeFloat;
     Vector3 X_Up, X_Down, Y_Up, Y_Down;
 
     // ècí∑èÛë‘ ÉXÉPÅ[ÉãYé≤2.0f
@@ -15,7 +16,7 @@ public class BoxScaleScript : MonoBehaviour
 
     void Start()
     {
-        ScaleChangeValue = 0.1f;
+        ScaleChangeValue = 0.0f;
 
         X_Up = new Vector3(ScaleChangeValue, 0f, 0f);
         X_Down = new Vector3(-ScaleChangeValue, 0f, 0f);
@@ -24,35 +25,26 @@ public class BoxScaleScript : MonoBehaviour
         Y_Down = new Vector3(0f, -ScaleChangeValue, 0f);
     }
 
-    void ScaleChange_Y_Up()
+    void Update()
     {
-        if (this.transform.localScale.y < 2.0f)
+
+        if (this.transform.localScale.y < ChangeFloat)
         {
             this.transform.localScale += Y_Up;
         }
-    }
-
-    void ScaleChange_Y_Down()
-    {
-        if (this.transform.localScale.y > 1.0f)
+        else if (this.transform.localScale.y > ChangeFloat)
         {
             this.transform.localScale += Y_Down;
         }
-    }
 
-    void ScaleChange_X_Up()
-    {
-        if (this.transform.localScale.x < 2.0f)
+        if (this.transform.localScale.x < ChangeFloat)
         {
             this.transform.localScale += X_Up;
         }
-    }
-
-    void ScaleChange_X_Down()
-    {
-        if (this.transform.localScale.x > 1.0f)
+        else if (this.transform.localScale.x > ChangeFloat)
         {
             this.transform.localScale += X_Down;
         }
+
     }
 }

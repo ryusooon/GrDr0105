@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AnimationEventScript : MonoBehaviour
 {
-    [SerializeField] PlayerScript PlaySc; 
+    [SerializeField] PlayerScript PlaySc;
+    [SerializeField] BoxScaleScript BoxSc;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,30 @@ public class AnimationEventScript : MonoBehaviour
 
         // LookDirectionçXêV
         PlaySc.LookDirection = s;
+    }
+
+    public void ScaleChange_Y_Up(float y)
+    {
+        Debug.Log("YägëÂ");
+        BoxSc.ChangeFloat = y;
+    }
+
+    public void ScaleChange_Y_Down(float y)
+    {
+        Debug.Log("Yèkè¨");
+        BoxSc.ChangeFloat = y;
+    }
+
+    public void ScaleChange_X_Up(float x)
+    {
+        Debug.Log("XägëÂ");
+        BoxSc.ChangeFloat = x;
+    }
+
+    public void ScaleChange_X_Down(float x)
+    {
+        Debug.Log("Xèkè¨");
+        BoxSc.ChangeFloat = x;
     }
 
 }
