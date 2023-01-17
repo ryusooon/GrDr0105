@@ -21,7 +21,7 @@ public class tuibitestScript : MonoBehaviour
     {
         // Fobj = this.gameObject;
 
-        tag = GameObject.FindWithTag("DrAtkObj");　　
+        tag = GameObject.FindWithTag("target");　　
 
         Rb = this.gameObject.GetComponent<Rigidbody>();
 
