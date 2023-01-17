@@ -110,19 +110,19 @@ public class PlayerScript : MonoBehaviour
         {
             if (MyVec.z < -0.5)
             {
-                Debug.Log("隙間エリア(後方)の左右移動");
+                //Debug.Log("隙間エリア(後方)の左右移動");
                 BACK();
             }
             else if (MyVec.z > -0.5)
             {
-                Debug.Log("隙間エリア(前方)の左右移動");
+                //Debug.Log("隙間エリア(前方)の左右移動");
                 FORWARD();
             }
             else
             {
-                Debug.Log("隙間エリア");
-                Debug.Log("隙間エリアのX" + MyVec.x);
-                Debug.Log("隙間エリアのZ" + MyVec.z);
+                //Debug.Log("隙間エリア");
+                //Debug.Log("隙間エリアのX" + MyVec.x);
+                //Debug.Log("隙間エリアのZ" + MyVec.z);
             }
         }
 

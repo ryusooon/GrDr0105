@@ -5018,7 +5018,7 @@ AnimationClip:
     functionName: ScaleChange_Y_Up
     data: 2.0
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 2
+    floatParameter: 1
     intParameter: 0
     messageOptions: 0
   - time: 48.75
@@ -5032,7 +5032,7 @@ AnimationClip:
     functionName: ScaleChange_Y_Down
     data: 0.0
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: -1
     intParameter: 0
     messageOptions: 0
   - time: 62.616665
@@ -5081,14 +5081,14 @@ AnimationClip:
     functionName: ScaleChange_X_Up
     data: 2.0
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 2
+    floatParameter: 1
     intParameter: 0
     messageOptions: 0
   - time: 136.65
     functionName: ScaleChange_X_Down
     data: 0.0
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: -1
     intParameter: 0
     messageOptions: 0
   - time: 141.66667
@@ -5102,7 +5102,7 @@ AnimationClip:
     functionName: ScaleChange_Y_Up
     data: 2.0
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 2
+    floatParameter: 1
     intParameter: 0
     messageOptions: 0
   - time: 151.78334
@@ -5116,7 +5116,7 @@ AnimationClip:
     functionName: ScaleChange_Y_Down
     data: 0.0
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: -1
     intParameter: 0
     messageOptions: 0
   - time: 162.08333

@@ -30,26 +30,34 @@ public class AnimationEventScript : MonoBehaviour
 
     public void ScaleChange_Y_Up(float y)
     {
-        Debug.Log("YägëÂ");
-        BoxSc.ChangeFloat = y;
+        //Debug.Log("YägëÂ");
+        //BoxSc.PleaseChange = true;
+        BoxSc.Y_Change = true;
+        //BoxSc.ChangeFloat_Y = y;
     }
 
     public void ScaleChange_Y_Down(float y)
     {
-        Debug.Log("Yèkè¨");
-        BoxSc.ChangeFloat = y;
+        //Debug.Log("Yèkè¨");
+        //BoxSc.PleaseChange = true;
+        BoxSc.Y_Change = false;
+        //BoxSc.ChangeFloat_Y = y;
     }
 
     public void ScaleChange_X_Up(float x)
     {
-        Debug.Log("XägëÂ");
-        BoxSc.ChangeFloat = x;
+        //Debug.Log("XägëÂ");
+        //BoxSc.PleaseChange = true;
+        BoxSc.X_Change = true;
+        //BoxSc.ChangeFloat_X = x;
     }
 
     public void ScaleChange_X_Down(float x)
     {
-        Debug.Log("Xèkè¨");
-        BoxSc.ChangeFloat = x;
+        //Debug.Log("Xèkè¨");
+        //BoxSc.PleaseChange = true;
+        BoxSc.X_Change = false;
+        //BoxSc.ChangeFloat_X = x;
     }
 
 }
