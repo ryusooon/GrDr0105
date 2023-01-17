@@ -18,11 +18,11 @@ public class BoxScaleScript : MonoBehaviour
     {
         ScaleChangeValue = 0.0f;
 
-        X_Up = new Vector3(ScaleChangeValue, 0f, 0f);
-        X_Down = new Vector3(-ScaleChangeValue, 0f, 0f);
+        //X_Up = new Vector3(ScaleChangeValue, 0f, 0f);
+        //X_Down = new Vector3(-ScaleChangeValue, 0f, 0f);
 
-        Y_Up = new Vector3(0f, ScaleChangeValue, 0f);
-        Y_Down = new Vector3(0f, -ScaleChangeValue, 0f);
+        //Y_Up = new Vector3(0f, ScaleChangeValue, 0f);
+        //Y_Down = new Vector3(0f, -ScaleChangeValue, 0f);
     }
 
     void Update()
@@ -30,20 +30,29 @@ public class BoxScaleScript : MonoBehaviour
 
         if (this.transform.localScale.y < ChangeFloat)
         {
-            this.transform.localScale += Y_Up;
+            Y_Up = this.transform.localScale; 
+            Y_Up.y = Y_Up.y + ScaleChangeValue;  
+            gameObject.transform.localScale = Y_Up; 
+
         }
         else if (this.transform.localScale.y > ChangeFloat)
         {
-            this.transform.localScale += Y_Down;
+            Y_Down = this.transform.localScale;
+            Y_Down.y = Y_Down.y - ScaleChangeValue;
+            gameObject.transform.localScale = Y_Down;
         }
 
         if (this.transform.localScale.x < ChangeFloat)
         {
-            this.transform.localScale += X_Up;
+            X_Up = this.transform.localScale;
+            X_Up.y = X_Up.x + ScaleChangeValue;
+            gameObject.transform.localScale = X_Up;
         }
         else if (this.transform.localScale.x > ChangeFloat)
         {
-            this.transform.localScale += X_Down;
+            X_Down = this.transform.localScale;
+            X_Down.x = X_Down.x - ScaleChangeValue;
+            gameObject.transform.localScale = X_Down;
         }
 
     }

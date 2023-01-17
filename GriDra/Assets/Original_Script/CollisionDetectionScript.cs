@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class CollisionDetectionScript : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class CollisionDetectionScript : MonoBehaviour
     public GameObject gamemanager;
 
     int Time;
+
+    private SteamVR_Action_Single squeeze = SteamVR_Actions.default_Squeeze;
+    private SteamVR_Action_Vibration vibration = SteamVR_Actions.default_Haptic;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,7 @@ public class CollisionDetectionScript : MonoBehaviour
             if (Time <= StanTime)
             {
                 // スタンタイムより時間経過していなければ
+                vibration.Execute(0, 0.2f, 150, 0.5f, SteamVR_Input_Sources.RightHand);
                 Time++;
             }
             else
@@ -46,15 +51,19 @@ public class CollisionDetectionScript : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    void OnCollisionEnter(Collision col)
     {
-        if (collision.gameObject.layer != LayerMask.NameToLayer("PlayArea"))  // 制限壁以外にぶつかったら
+        if (col.gameObject.tag != "Cubes")
         {
             Stan = true;
-            soundscript.PlayerSound(2);
-
+            Debug.Log("ぶつかった！");
         }
+        else
+        {
 
+            Debug.Log("制限壁にぶつかった！");
+        }
     }
 
 }

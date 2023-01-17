@@ -15,6 +15,7 @@ TagManager:
   - Level1Prehab
   - Level2Prehab
   - Level3Prehab
+  - Cubes
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - UI
   - PlayArea
   - Player
-  - 
+  - StageObject
   - 
   - 
   - 
