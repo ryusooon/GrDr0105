@@ -48,7 +48,7 @@ public class backfireScript : MonoBehaviour
     public void PrintEvent(string s)
     {
         Debug.Log(s);
-        if (s == "back")
+        if (s == "now")
         {
            
 
