@@ -12,8 +12,8 @@ public class TouchPadScript : MonoBehaviour
 
     bool TrackPadTouch;
 
-    //[SerializeField] MovePointScript ToX1;
-    //[SerializeField] MovePointScript ToZ2;
+    [SerializeField] MovePointScript ToX1;
+    [SerializeField] MovePointScript ToZ2;
 
     public GameObject countObj; //CountObject、CountDownScriptの有効化、無効化をするのに使用 //冨岡
     public GameObject countCanv;　//CountDownCanvsの表示、非表示の切り替えに使用　//冨岡
@@ -37,8 +37,8 @@ public class TouchPadScript : MonoBehaviour
             countCanv.SetActive(true); //冨岡
 
             //リセット処理切り替え
-            //ToX1.ReSet = !ToX1.ReSet;
-            //ToZ2.ReSet = !ToZ2.ReSet;
+            ToX1.ReSet = !ToX1.ReSet;
+            ToZ2.ReSet = !ToZ2.ReSet;
 
             //TrackPadTouch = !TrackPadTouch;
             Debug.Log("パッド入力！");
@@ -66,6 +66,9 @@ public class TouchPadScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             countObj.GetComponent<CountDown>().enabled = true;
+
+            ToX1.ReSet = !ToX1.ReSet;
+            ToZ2.ReSet = !ToZ2.ReSet;
         }
     }
 }

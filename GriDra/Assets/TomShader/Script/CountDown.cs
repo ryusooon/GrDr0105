@@ -32,6 +32,9 @@ public class CountDown : MonoBehaviour
         Count = GameObject.Find("Image").GetComponent<Image>();
         Count.enabled = false;
         countobj.GetComponent<CountDown>().enabled = false;
+
+        ToX1.ReSet = !ToX1.ReSet;
+        ToZ2.ReSet = !ToZ2.ReSet;
     }
 
     // Update is called once per frame
@@ -56,20 +59,12 @@ public class CountDown : MonoBehaviour
         if (countTime < 3)
         {
             Count.sprite = two;
-
-            // ↓築花追記
-            ToX1.ReSet = !ToX1.ReSet;
-            ToZ2.ReSet = !ToZ2.ReSet;
         }
 
         //タイマー(countTime)が2未満の時画像1を表示
         if (countTime < 2)
         {
             Count.sprite = one;
-
-            // ↓築花追記
-            ToX1.ReSet = !ToX1.ReSet;
-            ToZ2.ReSet = !ToZ2.ReSet;
         }
 
         //タイマー(countTime)が1未満の時画像startを表示

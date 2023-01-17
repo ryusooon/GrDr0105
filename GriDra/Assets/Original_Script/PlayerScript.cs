@@ -37,14 +37,6 @@ public class PlayerScript : MonoBehaviour
 
     public string LookDirection;
 
-    // existing components on the GameObject
-    AnimationClip clip;
-    Animator anim;
-
-    // new event created
-    AnimationEvent evt;
-
-
     //public float ForcePower = 0.25f;
     //public float MaxVal = 1.5f;
 
@@ -66,17 +58,6 @@ public class PlayerScript : MonoBehaviour
         Center_z = MyObj.transform.position.z;
 
         LookDirection = "North";
-
-        // アニメーション関係
-        evt = new AnimationEvent();
-
-        evt.intParameter = 12345;
-        evt.time = 1.3f;
-        evt.functionName = "";
-
-        anim = GetComponent<Animator>();
-        clip = anim.runtimeAnimatorController.animationClips[0];
-        clip.AddEvent(evt);
     }
 
     // Update is called once per frame
@@ -300,12 +281,6 @@ public class PlayerScript : MonoBehaviour
         //MyRig.AddForce(Right_Force_X, ForceMode.Impulse);
         Debug.Log("Right");
 
-    }
-
-    // イベントから方角を取得
-    public void PrintEvent(string s)
-    {
-        LookDirection = s;
     }
 
     void ForceCheck()
