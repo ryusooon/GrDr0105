@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.Extras;
 
 public class TouchPadScript : MonoBehaviour
 {
@@ -18,13 +19,20 @@ public class TouchPadScript : MonoBehaviour
     public GameObject countObj; //CountObject、CountDownScriptの有効化、無効化をするのに使用 //冨岡
     public GameObject countCanv;　//CountDownCanvsの表示、非表示の切り替えに使用　//冨岡
 
+
+    //public GameObject ContRight;
+
+    public GameObject Righthand;            //林
+    private SteamVR_LaserPointer slScript;　//林
+    private GameObject line;
+
     //private Vector2 pos;
     //float r, sita;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        slScript = Righthand.GetComponent<SteamVR_LaserPointer>();//林
     }
 
     // Update is called once per frame
@@ -35,6 +43,13 @@ public class TouchPadScript : MonoBehaviour
         {
             Time.timeScale = 0.01f; //冨岡
             countCanv.SetActive(true); //冨岡
+
+            //GameObject line = GameObject.Find("New Game Object"); //林
+            //line = slScript.line;                                 //林
+
+            slScript.line.SetActive(true);//林
+
+            //line.SetActive(true);　//林
 
             //リセット処理切り替え
             ToX1.ReSet = !ToX1.ReSet;
@@ -69,6 +84,8 @@ public class TouchPadScript : MonoBehaviour
 
             ToX1.ReSet = !ToX1.ReSet;
             ToZ2.ReSet = !ToZ2.ReSet;
+
+            slScript.line.SetActive(false);//林
         }
     }
 }

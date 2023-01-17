@@ -26,6 +26,7 @@ namespace Valve.VR.Extras
 
         Transform previousContact = null;
 
+        public GameObject line;
 
         private void Start()
         {
@@ -68,6 +69,9 @@ namespace Valve.VR.Extras
             Material newMaterial = new Material(Shader.Find("Unlit/Color"));
             newMaterial.SetColor("_Color", color);
             pointer.GetComponent<MeshRenderer>().material = newMaterial;
+
+            line = GameObject.Find("New Game Object");  //林
+            line.SetActive(false);
         }
 
         public virtual void OnPointerIn(PointerEventArgs e)

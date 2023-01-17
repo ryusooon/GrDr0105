@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Valve.VR.Extras;
 
 public class CountDown : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class CountDown : MonoBehaviour
     [SerializeField] MovePointScript ToX1;
     [SerializeField] MovePointScript ToZ2;
 
+    //public GameObject Righthand;            //林
+    //private SteamVR_LaserPointer slScript;　//林
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,8 @@ public class CountDown : MonoBehaviour
 
         ToX1.ReSet = !ToX1.ReSet;
         ToZ2.ReSet = !ToZ2.ReSet;
+
+        //slScript = Righthand.GetComponent<SteamVR_LaserPointer>();//林
     }
 
     // Update is called once per frame
@@ -80,6 +86,8 @@ public class CountDown : MonoBehaviour
             countcanv.SetActive(false);
             Time.timeScale = 1.0f;
             countTime = 4.0f;
+
+            
         }
 
         //タイマー(countTime)が4の時pauseを表示する
