@@ -89,21 +89,25 @@ public class PlayerScript : MonoBehaviour
         if ((MyVec.x >= -0.5 && MyVec.x <= 0.5) && (MyVec.z <= 1.0 && MyVec.z >= 0.5))
         {
             // 前向いてる時
+            Debug.Log("方向：前");
             FORWARD();
         }
         else if ((MyVec.x >= -0.5 && MyVec.x <= 0.5) && (MyVec.z >= -1.0 && MyVec.z <= -0.5))
         {
             // 後ろ向いてる時
+            Debug.Log("方向：後ろ");
             BACK();
         }
         else if ((MyVec.x < -0.5 && MyVec.x >= -1.0) && (MyVec.z < 0.5 && MyVec.z > -0.5))
         {
             // 左向いている時
+            Debug.Log("方向：左");
             LEFT();
         }
         else if ((MyVec.x > 0.5 && MyVec.x <= 1.0) && (MyVec.z < 0.5 && MyVec.z > -0.5))
         {
             // 右向いている時
+            Debug.Log("方向：右");
             RIGHT();
         }
         else
@@ -111,11 +115,13 @@ public class PlayerScript : MonoBehaviour
             if (MyVec.z < -0.5)
             {
                 //Debug.Log("隙間エリア(後方)の左右移動");
+                Debug.Log("方向:隙間後ろ");
                 BACK();
             }
             else if (MyVec.z > -0.5)
             {
                 //Debug.Log("隙間エリア(前方)の左右移動");
+                Debug.Log("方向:隙間前");
                 FORWARD();
             }
             else
@@ -297,19 +303,19 @@ public class PlayerScript : MonoBehaviour
         }
         else if (LookDirection == "West")
         {
-            Left_Force_X = new Vector3(MoveSpeed2, 0f, 0f);
-            Right_Force_X = new Vector3(-MoveSpeed2, 0f, 0f);
+            Left_Force_X = new Vector3(MoveSpeed2, 0f, MoveSpeed2);
+            Right_Force_X = new Vector3(-MoveSpeed2, 0f, -MoveSpeed2);
 
             Left_Force_Z = new Vector3(0f, 0f, MoveSpeed2);
             Right_Force_Z = new Vector3(0f, 0f, -MoveSpeed2);
         }
         else if (LookDirection == "South")
         {
-            Left_Force_X = new Vector3(0f, 0f, -MoveSpeed2);
-            Right_Force_X = new Vector3(0f, 0f, MoveSpeed2);
+            Left_Force_X = new Vector3(MoveSpeed2, 0f, 0f);
+            Right_Force_X = new Vector3(-MoveSpeed2, 0f, 0f);
 
-            Left_Force_Z = new Vector3(MoveSpeed2, 0f, 0f);
-            Right_Force_Z = new Vector3(-MoveSpeed2, 0f, 0f);
+            Left_Force_Z = new Vector3(0f, 0f, MoveSpeed2);
+            Right_Force_Z = new Vector3(0f, 0f, -MoveSpeed2);
         }
         else if (LookDirection == "East")
         {
