@@ -50,17 +50,17 @@ public class backfireScript : MonoBehaviour
         Debug.Log(s);
         if (s == "now")
         {
-           
+
 
             Vector3 headp = head.transform.position;
-
+            //Vector3 headp = transform.TransformPoint(head.transform.position);
             Instantiate(FireObj, headp, Quaternion.identity);
 
             Fobj = GameObject.Find("DrFire(Clone)"); //å„Ç≈TagÇ…ïœçX
 
             rb_Fobj = Fobj.GetComponent<Rigidbody>();
 
-            Destroy(Fobj, 10f);
+            Destroy(Fobj, 5f);
             pate = 1;
         }
 

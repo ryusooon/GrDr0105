@@ -59,5 +59,10 @@ public class tuibitestScript : MonoBehaviour
             soundscript.Gimmick(1);
             Destroy(this.gameObject);
         }
+
+        if (other.tag == "target")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

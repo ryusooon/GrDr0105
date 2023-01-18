@@ -32,7 +32,7 @@ public class DranimContScript : MonoBehaviour
         }
         else if(s == "roar")
         {
-            animator.SetTrigger("Roar");
+            animator.SetTrigger("roarTrigger");
         }
         else if(s == "tail")
         {

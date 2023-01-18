@@ -128,3 +128,4 @@ MonoBehaviour:
   player: {fileID: 0}
   rubble: {fileID: 6052057109575739917, guid: f1497f9f62201a44f884489a70b43823, type: 3}
   rubbleSpeed: 32
+  gamemanager: {fileID: 8064563104863921801, guid: b32a8b7a2c4944a48b412bb179bad196, type: 3}

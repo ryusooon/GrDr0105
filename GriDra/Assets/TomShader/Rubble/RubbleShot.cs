@@ -8,10 +8,15 @@ public class RubbleShot : MonoBehaviour
     public GameObject rubble;
     public float rubbleSpeed = 10.0f;
 
+    SoundManagerScript soundscript;
+
+    public GameObject gamemanager;
+
     // Start is called before the first frame update
     void Start()
     {
         transform.LookAt(player.transform);
+        soundscript = gamemanager.GetComponent<SoundManagerScript>();
     }
 
     // Update is called once per frame
@@ -24,6 +29,7 @@ public class RubbleShot : MonoBehaviour
     {
         if (other.tag == "Dragon" || other.tag == "Drtama")
         {
+            soundscript.Gimmick(1);
             var shot = Instantiate(rubble, transform.position, Quaternion.identity);
             shot.GetComponent<Rigidbody>().velocity = transform.forward.normalized * rubbleSpeed;
         }

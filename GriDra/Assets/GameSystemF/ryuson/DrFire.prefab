@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4138467684527516907}
   - component: {fileID: -85369365726960988}
   - component: {fileID: 103394410709087150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DrFire
   m_TagString: Drtama
   m_Icon: {fileID: 0}
@@ -184,6 +184,22 @@ PrefabInstance:
     - target: {fileID: 1462416277103640071, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
       propertyPath: m_Name
       value: Effect_FireBall_Dragon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462416277103640071, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462416277822131671, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462416277939071543, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462416278871249613, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
