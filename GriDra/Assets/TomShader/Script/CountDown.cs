@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Valve.VR.Extras;
+using Valve.VR;
+//using Valve.VR.Extras;
 
 public class CountDown : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class CountDown : MonoBehaviour
     //public GameObject Righthand;            //林
     //private SteamVR_LaserPointer slScript;　//林
 
+    //public bool Touch_Up, Touch_Down;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,15 @@ public class CountDown : MonoBehaviour
         //デバッグ用のタイマーのテキスト表示
         //Text timer_text = timer_object.GetComponent<Text>();
         //timer_text.text = seconds.ToString();
+
+        //if (Touch_Up)
+        //{
+        //    Debug.Log("上触ってる");
+        //}
+        //else if (Touch_Down)
+        //{
+        //    Debug.Log("下触ってる");
+        //}
 
         //タイマー(countTime)が4未満の時画像3を表示
         if (countTime < 4)
@@ -103,6 +115,9 @@ public class CountDown : MonoBehaviour
                 Count.sprite = menu;
                 Pauseimg.enabled = true;
                 Pauseimg.sprite = pause;
+
+                
+
             }
         }
     }

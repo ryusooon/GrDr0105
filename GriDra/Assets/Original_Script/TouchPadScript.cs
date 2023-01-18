@@ -36,15 +36,13 @@ public class TouchPadScript : MonoBehaviour
     //結果の格納用Vector2型関数
     private Vector2 posleft, posright;
 
+    public bool Touch_Up, Touch_Down;
+    //[SerializeField] CountDown CouDoSc;
 
     // Start is called before the first frame update
     void Start()
     {
         slScript = Righthand.GetComponent<SteamVR_LaserPointer>();//林
-
-        posright = TrackPad.GetLastAxis(SteamVR_Input_Sources.RightHand);
-        //posleftの中身を確認
-        Debug.Log("触れてる所" + posright.x + " " + posright.y);
     }
 
     // Update is called once per frame
@@ -53,7 +51,32 @@ public class TouchPadScript : MonoBehaviour
 
         posright = TrackPad.GetLastAxis(SteamVR_Input_Sources.RightHand);
         //posleftの中身を確認
-        Debug.Log( "触れてる所" + posright.x + " " + posright.y);
+        Debug.Log("触れてる所" + posright.x + " " + posright.y);
+
+        if (posright.y > 0.0f)
+        {
+            Touch_Up = true;
+            Touch_Down = false;
+        }
+        else if (posright.y < 0.0f)
+        {
+            Touch_Up = false;
+            Touch_Down = true;
+        }
+        else
+        {
+            Touch_Up = false;
+            Touch_Down = false;
+        }
+
+        if (Touch_Up)
+        {
+            Debug.Log("上触ってる");
+        }
+        if (Touch_Down)
+        {
+            Debug.Log("下触ってる");
+        }
 
 
         if (Teleport.GetStateDown(hand))
@@ -86,6 +109,8 @@ public class TouchPadScript : MonoBehaviour
             //TrackPadTouch = !TrackPadTouch;
             Debug.Log("パッドから指を放した！");
         }
+
+
 
         //Debug.Log("パッド状況" + TrackPadTouch);
 
