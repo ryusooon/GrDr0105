@@ -70,8 +70,8 @@ namespace Valve.VR.Extras
             newMaterial.SetColor("_Color", color);
             pointer.GetComponent<MeshRenderer>().material = newMaterial;
 
-            line = GameObject.Find("New Game Object");  //林
-            line.SetActive(false);
+            //line = GameObject.Find("New Game Object");  //林
+            //line.SetActive(false);
         }
 
         public virtual void OnPointerIn(PointerEventArgs e)

@@ -48,30 +48,30 @@ public class LaserPointerHandlerScript : MonoBehaviour
         }
 
         //対象のオブジェクトがBuckToTitolButtonの場合ボタンを赤くしStartSceneに遷移
-        if (e.target.name == "BuckToTitolButton")
-        {
-            GameObject bucktotitolbutton = GameObject.Find("BuckToTitolButton");
-            bucktotitolbutton.GetComponent<Renderer>().material.color = Color.red;
-            Time.timeScale = 0.01f;
-            SceneManager.LoadScene("StartScene");
-        }
+        //if (e.target.name == "BuckToTitolButton")
+        //{
+        //    GameObject bucktotitolbutton = GameObject.Find("BuckToTitolButton");
+        //    bucktotitolbutton.GetComponent<Renderer>().material.color = Color.red;
+        //    Time.timeScale = 0.01f;
+        //    SceneManager.LoadScene("StartScene");
+        //}
 
         //対象のオブジェクトがCloseButtonの場合ボタンを赤くしPause画面を閉じる
-        if (e.target.name == "CloseButton")
-        {
-            GameObject closebutton = GameObject.Find("CloseButton");
-            closebutton.GetComponent<Renderer>().material.color = Color.red;
-            countObj.GetComponent<CountDown>().enabled = true;
+        //if (e.target.name == "CloseButton")
+        //{
+        //    GameObject closebutton = GameObject.Find("CloseButton");
+        //    closebutton.GetComponent<Renderer>().material.color = Color.red;
+        //    countObj.GetComponent<CountDown>().enabled = true;
 
-            //closeButton.SetActive(false);
-            //buckButton.SetActive(false);
+        //    //closeButton.SetActive(false);
+        //    //buckButton.SetActive(false);
 
-            //ToX1.ReSet = !ToX1.ReSet;
-            //ToZ2.ReSet = !ToZ2.ReSet;
+        //    //ToX1.ReSet = !ToX1.ReSet;
+        //    //ToZ2.ReSet = !ToZ2.ReSet;
 
-            slScript.line.SetActive(false);//林
-            //SceneManager.LoadScene("StartScene");
-        }
+        //    slScript.line.SetActive(false);//林
+        //    //SceneManager.LoadScene("StartScene");
+        //}
     }
 
     //レーザーポインターが対象のオブジェクトに触れた時オブジェクトの色を変える
@@ -89,17 +89,17 @@ public class LaserPointerHandlerScript : MonoBehaviour
             startbutton.GetComponent<Renderer>().material.color = Color.blue;
         }
 
-        if (e.target.name == "BuckToTitolButton")
-        {
-            GameObject startbutton = GameObject.Find("BuckToTitolButton");
-            startbutton.GetComponent<Renderer>().material.color = Color.blue;
-        }
+        //if (e.target.name == "BuckToTitolButton")
+        //{
+        //    GameObject startbutton = GameObject.Find("BuckToTitolButton");
+        //    startbutton.GetComponent<Renderer>().material.color = Color.blue;
+        //}
 
-        if (e.target.name == "CloseButton")
-        {
-            GameObject startbutton = GameObject.Find("CloseButton");
-            startbutton.GetComponent<Renderer>().material.color = Color.blue;
-        }
+        //if (e.target.name == "CloseButton")
+        //{
+        //    GameObject startbutton = GameObject.Find("CloseButton");
+        //    startbutton.GetComponent<Renderer>().material.color = Color.blue;
+        //}
     }
 
     //レーザーポインターが対象のオブジェクトから離れている時オブジェクトの色を変える
@@ -117,17 +117,17 @@ public class LaserPointerHandlerScript : MonoBehaviour
             startbutton.GetComponent<Renderer>().material.color = Color.yellow;
         }
 
-        if (e.target.name == "BuckToTitolButton")
-        {
-            GameObject startbutton = GameObject.Find("BuckToTitolButton");
-            startbutton.GetComponent<Renderer>().material.color = Color.yellow;
-        }
+        //if (e.target.name == "BuckToTitolButton")
+        //{
+        //    GameObject startbutton = GameObject.Find("BuckToTitolButton");
+        //    startbutton.GetComponent<Renderer>().material.color = Color.yellow;
+        //}
 
-        if (e.target.name == "CloseButton")
-        {
-            GameObject startbutton = GameObject.Find("CloseButton");
-            startbutton.GetComponent<Renderer>().material.color = Color.yellow;
-        }
+        //if (e.target.name == "CloseButton")
+        //{
+        //    GameObject startbutton = GameObject.Find("CloseButton");
+        //    startbutton.GetComponent<Renderer>().material.color = Color.yellow;
+        //}
     }
 
     // Start is called before the first frame update
@@ -139,6 +139,11 @@ public class LaserPointerHandlerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Viveなしのテスト用(StartSceneからの移動のみ)
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Time.timeScale = 0.01f;
+        //    SceneManager.LoadScene("MainScene");
+        //}
     }
 }
