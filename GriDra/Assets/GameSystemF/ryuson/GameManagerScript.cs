@@ -162,37 +162,37 @@ public class GameManagerScript : MonoBehaviour
         {
             case 1:
                 Dr.Bodyhp -= shotDmg;
-                Dr.Hp -= shotDmg;
                 if (Dr.Bodyhp <= 0) DateMove(pate);
-                if (Dr.Headhp <= 0) Dr.Hp -= shotDmg;
+                if (Dr.Headhp <= 0) Dr.Hp -= shotDmg + 1;
+                else Dr.Hp -= shotDmg;
                 break;
 
             case 2:
                 Dr.Headhp -= shotDmg;
-                Dr.Hp -= shotDmg;
                 if (Dr.Headhp <= 0) DateMove(pate);
-                if (Dr.Headhp <= 0) Dr.Hp -= shotDmg;
+                if (Dr.Headhp <= 0) Dr.Hp -= shotDmg + 1;
+                else Dr.Hp -= shotDmg;
                 break;
 
             case 3:
                 Dr.Lwinghp -= shotDmg;
-                Dr.Hp -= shotDmg;
                 if (Dr.Lwinghp <= 0) DateMove(pate);
-                if (Dr.Lwinghp <= 0) Dr.Hp -= shotDmg;
+                if (Dr.Lwinghp <= 0) Dr.Hp -= shotDmg + 1;
+                else Dr.Hp -= shotDmg;
                 break;
 
             case 4:
                 Dr.tailhp -= shotDmg;
-                Dr.Hp -= shotDmg;
                 if (Dr.tailhp <= 0) DateMove(pate);
-                if (Dr.tailhp <= 0) Dr.Hp -= shotDmg;
+                if (Dr.tailhp <= 0) Dr.Hp -= shotDmg + 1;
+                else Dr.Hp -= shotDmg;
                 break;
 
             case 5:
                 Dr.Rwinghp -= shotDmg;
-                Dr.Hp -= shotDmg;
                 if (Dr.Rwinghp <= 0) DateMove(pate);
-                if (Dr.Rwinghp <= 0) Dr.Hp -= shotDmg;
+                if (Dr.Rwinghp <= 0) Dr.Hp -= shotDmg + 1;
+                else Dr.Hp -= shotDmg;
                 break;
 
 
