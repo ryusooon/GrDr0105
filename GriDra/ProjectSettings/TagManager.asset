@@ -16,6 +16,7 @@ TagManager:
   - Level2Prehab
   - Level3Prehab
   - Cubes
+  - CameraTarget
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - StageObject
   - Rubble
   - tama
-  - 
-  - 
+  - Prehab
+  - DragonParts
   - 
   - 
   - 
