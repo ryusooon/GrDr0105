@@ -23,7 +23,7 @@ public class GameManagerScript : MonoBehaviour
     public GameObject lwing;
     public GameObject body;
 
-
+    public int tmp = 0;
 
 
 
@@ -91,6 +91,7 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        tmp = Dr.Hp;
         //Statustext.text = string.Format("{00} Dr.Hp",Dr.Hp); //毎フレーム呼び出さなくても変更時に一回呼び出すだけでいいかもしれない、けどDebug用ならこのままでおｋ
     }
 

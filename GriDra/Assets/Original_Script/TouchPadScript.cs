@@ -81,10 +81,11 @@ public class TouchPadScript : MonoBehaviour
 
         if (Teleport.GetStateDown(hand))
         {
-            Time.timeScale = 0.01f; //冨岡
-            countCanv.SetActive(true); //冨岡
-            closeButton.SetActive(true);
-            buckButton.SetActive(true);
+            //トラックパッドが押されたらtimeScaleを0.01にして、Pause画面を表示
+            //Time.timeScale = 0.01f; //冨岡
+            //countCanv.SetActive(true); //冨岡
+            //closeButton.SetActive(true);
+            //buckButton.SetActive(true);
 
             //GameObject line = GameObject.Find("New Game Object"); //林
             //line = slScript.line;                                 //林
