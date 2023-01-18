@@ -6,8 +6,11 @@ public class InstantiatePrehabScript : MonoBehaviour
 {
     // プレハブを生成するためのスクリプト
 
-    [SerializeField] GameObject Prehab;
-    [SerializeField] GameObject ShotPrehab;
+    GameObject Prehab;
+
+    [SerializeField] GameObject ThunderPrehab1;
+    [SerializeField] GameObject ThunderPrehab2;
+    [SerializeField] GameObject ThunderPrehab3;
 
     [SerializeField] Transform StartPos;
     [SerializeField] Transform TargetPos1;
@@ -47,9 +50,12 @@ public class InstantiatePrehabScript : MonoBehaviour
 
             MeshRenderer NewMaterial;
 
+            Prehab = ChangePrehab();
+
             if (ChargeUp)
             {
-                NewPrehab = Instantiate(ShotPrehab, StartPos.position, Quaternion.identity);
+                //NewPrehab = Instantiate(ShotPrehab, StartPos.position, Quaternion.identity);
+                NewPrehab = Instantiate(Prehab, StartPos.position, Quaternion.identity);
                 NewPrehab.transform.localScale = new Vector3(ScaleCount, ScaleCount, ScaleCount);
 
                 ChargeUp = false;
@@ -109,7 +115,29 @@ public class InstantiatePrehabScript : MonoBehaviour
 
     //}
 
+    GameObject ChangePrehab()
+    {
+        GameObject CheckObject = null;
 
+        //if (newMaterial == Blue)
+        if (ScaleCount < 8)
+        {
+            CheckObject = ThunderPrehab1;
+        }
+        //else if (newMaterial == Green)
+        else if (ScaleCount >= 8 && ScaleCount < 14)
+        {
+            CheckObject = ThunderPrehab2;
+        }
+        //else if (newMaterial == Red)
+        else if (ScaleCount >= 14)
+        {
+            CheckObject = ThunderPrehab3;
+        }
+
+        return CheckObject;
+
+    }
 
     //void ChangeTag(GameObject newPrehab, Material newMaterial)
     void ChangeTag(GameObject newPrehab)
