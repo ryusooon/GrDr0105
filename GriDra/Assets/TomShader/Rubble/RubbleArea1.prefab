@@ -127,4 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   rubble: {fileID: 6052057109575739917, guid: f1497f9f62201a44f884489a70b43823, type: 3}
-  rubbleSpeed: 500
+  rubbleSpeed: 32
