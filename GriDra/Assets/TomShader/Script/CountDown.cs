@@ -23,6 +23,9 @@ public class CountDown : MonoBehaviour
     public GameObject countobj; //CountObject、CountDownScriptの有効化、無効化をするのに使用
     public GameObject countcanv; //CountDownCanvsの表示、非表示の切り替えに使用
 
+    public GameObject closeButton;
+    public GameObject buckButton;
+
     // ↓築花追記
     [SerializeField] MovePointScript ToX1;
     [SerializeField] MovePointScript ToZ2;
@@ -56,6 +59,8 @@ public class CountDown : MonoBehaviour
         //タイマー(countTime)が4未満の時画像3を表示
         if (countTime < 4)
         {
+            closeButton.SetActive(false);
+            buckButton.SetActive(false);
             Pauseimg.enabled = false;
             Count.enabled = true;
             Count.sprite = three;

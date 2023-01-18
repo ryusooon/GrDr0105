@@ -10,6 +10,14 @@ public class LaserPointerHandlerScript : MonoBehaviour
 {
     public SteamVR_LaserPointer laserPointer;
 
+    public GameObject countObj; //CountObject、CountDownScriptの有効化、無効化をするのに使用
+    //public GameObject closeButton;
+    //public GameObject buckButton;
+
+    public GameObject Righthand;            //林
+    private SteamVR_LaserPointer slScript;　//林
+    private GameObject line;
+
     private void Awake()
     {
         laserPointer.PointerIn += PointerInside;
@@ -17,7 +25,7 @@ public class LaserPointerHandlerScript : MonoBehaviour
         laserPointer.PointerClick += PointerClick;
     }
 
-    //レーザーポインターが対象のオブジェクトに触れている時にコントローラーのトリガー(人差し指)を押すとシーン遷移する
+    //レーザーポインターが対象のオブジェクトに触れている時にコントローラーのトリガー(人差し指)を押すと
     public void PointerClick(object sender, PointerEventArgs e)
     {
         //対象のオブジェクトがStartButtonの場合ボタンを赤くしMainSceneに遷移
@@ -29,12 +37,40 @@ public class LaserPointerHandlerScript : MonoBehaviour
             SceneManager.LoadScene("MainScene");
         }
 
-        //対象のオブジェクトがEndButtonの場合ボタンを赤くしStartSceneに遷移
+        //対象のオブジェクトがEndButtonの場合ボタンを赤くしアプリを閉じる　StartSceneに遷移
         if (e.target.name == "EndButton")
         {
-            GameObject startbutton = GameObject.Find("EndButton");
-            startbutton.GetComponent<Renderer>().material.color = Color.red;
+            GameObject endbutton = GameObject.Find("EndButton");
+            endbutton.GetComponent<Renderer>().material.color = Color.red;
+            UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit(); //ゲーム終了
+            //SceneManager.LoadScene("StartScene");
+        }
+
+        //対象のオブジェクトがBuckToTitolButtonの場合ボタンを赤くしStartSceneに遷移
+        if (e.target.name == "BuckToTitolButton")
+        {
+            GameObject bucktotitolbutton = GameObject.Find("BuckToTitolButton");
+            bucktotitolbutton.GetComponent<Renderer>().material.color = Color.red;
+            Time.timeScale = 0.01f;
             SceneManager.LoadScene("StartScene");
+        }
+
+        //対象のオブジェクトがCloseButtonの場合ボタンを赤くしPause画面を閉じる
+        if (e.target.name == "CloseButton")
+        {
+            GameObject closebutton = GameObject.Find("CloseButton");
+            closebutton.GetComponent<Renderer>().material.color = Color.red;
+            countObj.GetComponent<CountDown>().enabled = true;
+
+            //closeButton.SetActive(false);
+            //buckButton.SetActive(false);
+
+            //ToX1.ReSet = !ToX1.ReSet;
+            //ToZ2.ReSet = !ToZ2.ReSet;
+
+            slScript.line.SetActive(false);//林
+            //SceneManager.LoadScene("StartScene");
         }
     }
 
@@ -50,7 +86,19 @@ public class LaserPointerHandlerScript : MonoBehaviour
         if (e.target.name == "EndButton")
         {
             GameObject startbutton = GameObject.Find("EndButton");
-            startbutton.GetComponent<Renderer>().material.color = Color.yellow;
+            startbutton.GetComponent<Renderer>().material.color = Color.blue;
+        }
+
+        if (e.target.name == "BuckToTitolButton")
+        {
+            GameObject startbutton = GameObject.Find("BuckToTitolButton");
+            startbutton.GetComponent<Renderer>().material.color = Color.blue;
+        }
+
+        if (e.target.name == "CloseButton")
+        {
+            GameObject startbutton = GameObject.Find("CloseButton");
+            startbutton.GetComponent<Renderer>().material.color = Color.blue;
         }
     }
 
@@ -66,6 +114,18 @@ public class LaserPointerHandlerScript : MonoBehaviour
         if (e.target.name == "EndButton")
         {
             GameObject startbutton = GameObject.Find("EndButton");
+            startbutton.GetComponent<Renderer>().material.color = Color.yellow;
+        }
+
+        if (e.target.name == "BuckToTitolButton")
+        {
+            GameObject startbutton = GameObject.Find("BuckToTitolButton");
+            startbutton.GetComponent<Renderer>().material.color = Color.yellow;
+        }
+
+        if (e.target.name == "CloseButton")
+        {
+            GameObject startbutton = GameObject.Find("CloseButton");
             startbutton.GetComponent<Renderer>().material.color = Color.yellow;
         }
     }
