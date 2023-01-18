@@ -12,10 +12,25 @@ public class GameManagerScript : MonoBehaviour
     CharacterStatus Player;
     CharacterStatus Updatedate;
 
-    private int shotDmg = 1;
+    public int shotDmg = 1;
 
     public GameObject Drtext;
     Text Statustext;
+
+    public GameObject head;
+    public GameObject tail;
+    public GameObject rwing;
+    public GameObject lwing;
+    public GameObject body;
+
+
+
+
+
+
+
+    private DragonHitScript DrHit;
+    private ChangeMatScript Cscript;
 
     //以下説明文
     /*このManagerScriptにやりとりしてドラゴンとかプレイヤーの状態をやり取りすることにしようかなと
@@ -76,7 +91,7 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Statustext.text = string.Format("{00} Dr.Hp",Dr.Hp); //毎フレーム呼び出さなくても変更時に一回呼び出すだけでいいかもしれない、けどDebug用ならこのままでおｋ
+        //Statustext.text = string.Format("{00} Dr.Hp",Dr.Hp); //毎フレーム呼び出さなくても変更時に一回呼び出すだけでいいかもしれない、けどDebug用ならこのままでおｋ
     }
 
     private void Awake()
@@ -95,10 +110,41 @@ public class GameManagerScript : MonoBehaviour
 
     public void DateMove(int bui)
     {
-        if (bui == 1) Debug.Log("");
-        
-    }
+        switch (bui)
+        {
+            case 1:
+                Cscript = body.GetComponent<ChangeMatScript>();
+                Cscript.ChangeMat(1);
+                break;
 
+            case 2:
+                //Debug.Log("頭Change");
+                Cscript = head.GetComponent<ChangeMatScript>();
+                Cscript.ChangeMat(2);
+                break;
+
+            case 3:
+                Cscript = lwing.GetComponent<ChangeMatScript>();
+                Cscript.ChangeMat(3);
+                break;
+
+            case 4:
+                Cscript = tail.GetComponent<ChangeMatScript>();
+                Cscript.ChangeMat(4);
+                break;
+
+            case 5:
+                Cscript = rwing.GetComponent<ChangeMatScript>();
+                Cscript.ChangeMat(5);
+                break;
+
+
+            default:
+                break;
+
+        }
+
+    }
 
     //private void StatusUpdate(CharacterStatus oldsta, CharacterStatus newsta, int pattern)//patternいらない説
    // {
@@ -110,43 +156,43 @@ public class GameManagerScript : MonoBehaviour
 
     public void HitAcceptance(int pate) 
     {
-        Debug.Log(pate+"にあたった");
+        //Debug.Log(pate+"にあたった");
 
         switch (pate)
         {
             case 1:
-                Dr.Bodyhp--;
-                Dr.Hp--;
-                if (Dr.Bodyhp == 0) DateMove(pate);
-                if (Dr.Headhp <= 0) Dr.Hp--;
+                Dr.Bodyhp -= shotDmg;
+                Dr.Hp -= shotDmg;
+                if (Dr.Bodyhp <= 0) DateMove(pate);
+                if (Dr.Headhp <= 0) Dr.Hp -= shotDmg;
                 break;
 
             case 2:
-                Dr.Headhp--;
-                Dr.Hp--;
-                if (Dr.Headhp == 0) DateMove(pate);
-                if (Dr.Headhp <= 0) Dr.Hp--;
+                Dr.Headhp -= shotDmg;
+                Dr.Hp -= shotDmg;
+                if (Dr.Headhp <= 0) DateMove(pate);
+                if (Dr.Headhp <= 0) Dr.Hp -= shotDmg;
                 break;
 
             case 3:
-                Dr.Lwinghp--;
-                Dr.Hp--;
-                if (Dr.Lwinghp == 0) DateMove(pate);
-                if (Dr.Lwinghp <= 0) Dr.Hp--;
+                Dr.Lwinghp -= shotDmg;
+                Dr.Hp -= shotDmg;
+                if (Dr.Lwinghp <= 0) DateMove(pate);
+                if (Dr.Lwinghp <= 0) Dr.Hp -= shotDmg;
                 break;
 
             case 4:
-                Dr.tailhp--;
-                Dr.Hp--;
-                if (Dr.tailhp == 0) DateMove(pate);
-                if (Dr.tailhp <= 0) Dr.Hp--;
+                Dr.tailhp -= shotDmg;
+                Dr.Hp -= shotDmg;
+                if (Dr.tailhp <= 0) DateMove(pate);
+                if (Dr.tailhp <= 0) Dr.Hp -= shotDmg;
                 break;
 
             case 5:
-                Dr.Rwinghp--;
-                Dr.Hp--;
-                if (Dr.Rwinghp == 0) DateMove(pate);
-                if (Dr.Rwinghp <= 0) Dr.Hp--;
+                Dr.Rwinghp -= shotDmg;
+                Dr.Hp -= shotDmg;
+                if (Dr.Rwinghp <= 0) DateMove(pate);
+                if (Dr.Rwinghp <= 0) Dr.Hp -= shotDmg;
                 break;
 
 
@@ -161,7 +207,7 @@ public class GameManagerScript : MonoBehaviour
 
 
         //Debug.Log("総HP" + Dr.Hp + "\n頭Hp" + Dr.Headhp + "\n体Hp" + Dr.Bodyhp + "\n右羽Hp" + Dr.Rwinghp + "\n左羽Hp" + Dr.Lwinghp + "\n尻尾Hp" + Dr.tailhp);
-        Debug.Log("総HP" + Dr.Hp + "\n頭Hp");
+        //Debug.Log("総HP" + Dr.Hp + "\n頭Hp" + Dr.Headhp);
 
 
     }

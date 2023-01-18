@@ -20,11 +20,11 @@ public class DragonHitScript : MonoBehaviour
 
         Gman = GameManager.GetComponent<GameManagerScript>();
 
-        if (Objname == "body") pate = 1;
-        if (Objname == "head") pate = 2;
-        if (Objname == "left wing") pate = 3;
-        if (Objname == "tail") pate = 4;
-        if (Objname == "right wing") pate = 5;
+        if (Objname == "Body") pate = 1;
+        if (Objname == "Head") pate = 2;
+        if (Objname == "LeftWing") pate = 3;
+        if (Objname == "Tail") pate = 4;
+        if (Objname == "RightWing") pate = 5;
        // Debug.Log("‘Ì‚Ì•”ˆÊŠm”F"+ pate);
 
     }
@@ -47,6 +47,31 @@ public class DragonHitScript : MonoBehaviour
         if (col.gameObject.tag=="tama")
         {
 
+            Gman.HitAcceptance(pate);
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        //Debug.Log(other);
+
+        if (other.gameObject.tag == "Level1Prehab")
+        {
+            Gman.shotDmg = 1;
+            Gman.HitAcceptance(pate);
+        }
+
+        if (other.gameObject.tag == "Level2Prehab")
+        {
+            Gman.shotDmg = 2;
+            Gman.HitAcceptance(pate);
+        }
+
+        if (other.gameObject.tag == "Level3Prehab")
+        {
+            Gman.shotDmg = 3;
             Gman.HitAcceptance(pate);
         }
     }

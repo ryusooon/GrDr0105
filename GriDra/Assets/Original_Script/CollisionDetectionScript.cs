@@ -57,12 +57,12 @@ public class CollisionDetectionScript : MonoBehaviour
         if (col.gameObject.tag != "Cubes")
         {
             Stan = true;
-            Debug.Log("ぶつかった！");
+            //Debug.Log("ぶつかった！");
         }
         else
         {
 
-            Debug.Log("制限壁にぶつかった！");
+            //Debug.Log("制限壁にぶつかった！");
         }
     }
 

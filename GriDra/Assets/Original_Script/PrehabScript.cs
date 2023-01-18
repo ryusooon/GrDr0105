@@ -54,7 +54,7 @@ public class PrehabScript : MonoBehaviour
     void ChangeDirection()
     {
         ChangeOn = true;
-        Debug.Log("Change!"); 
+        //Debug.Log("Change!"); 
     }
 
     void OnTriggerEnter(Collider other)

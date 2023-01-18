@@ -68,9 +68,9 @@ public class PlayerScript : MonoBehaviour
 
         ForceCheck();
 
-        Debug.Log("MyVecX:" + MyVec.x);
-        Debug.Log("MyVecY:" + MyVec.y);
-        Debug.Log("MyVecZ:" + MyVec.z);
+        //Debug.Log("MyVecX:" + MyVec.x);
+        //Debug.Log("MyVecY:" + MyVec.y);
+        //Debug.Log("MyVecZ:" + MyVec.z);
 
         Up_Force = new Vector3(0f, MoveSpeed1, 0f);
         Down_Force = new Vector3(0f, -MoveSpeed1, 0f);
@@ -121,7 +121,7 @@ public class PlayerScript : MonoBehaviour
             else if (MyVec.z > -0.5)
             {
                 //Debug.Log("隙間エリア(前方)の左右移動");
-                Debug.Log("方向:隙間前");
+                //Debug.Log("方向:隙間前");
                 FORWARD();
             }
             else
@@ -157,13 +157,13 @@ public class PlayerScript : MonoBehaviour
     void UP()
     {
         MyRig.AddForce(Up_Force, ForceMode.Impulse);
-        Debug.Log("Up");
+        //Debug.Log("Up");
     }
 
     void DOWN()
     {
         MyRig.AddForce(Down_Force, ForceMode.Impulse);
-        Debug.Log("Down");
+        //Debug.Log("Down");
     }
 
     void FORWARD()
@@ -175,7 +175,7 @@ public class PlayerScript : MonoBehaviour
         {
             // 前向いてる時の左移動
             MyRig.AddForce(Left_Force_X, ForceMode.Impulse);
-            Debug.Log("FのL");
+            //Debug.Log("FのL");
         }
         else
         {

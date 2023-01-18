@@ -24,11 +24,11 @@ public class TrigerPullScript : MonoBehaviour
         //結果をGetLastAxisで取得して格納（左コントローラ版）
        　PullLeft = TriggerPull.GetLastAxis(SteamVR_Input_Sources.LeftHand);
         //中身の確認
-        Debug.Log("Left:" + PullLeft);
+        //Debug.Log("Left:" + PullLeft);
 
         //結果をGetLastAxisで取得してpullrightに格納（右コントローラ版）
         PullRight = TriggerPull.GetLastAxis(SteamVR_Input_Sources.RightHand);
         //中身の確認
-        Debug.Log("Right:" + PullRight);
+        //Debug.Log("Right:" + PullRight);
     }
 }
