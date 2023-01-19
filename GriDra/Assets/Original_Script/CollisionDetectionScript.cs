@@ -52,9 +52,9 @@ public class CollisionDetectionScript : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider other)
     {
-        if (col.gameObject.tag != "Cubes")
+        if (other.gameObject.tag != "Cubes")
         {
             Stan = true;
             //Debug.Log("Ç‘Ç¬Ç©Ç¡ÇΩÅI");

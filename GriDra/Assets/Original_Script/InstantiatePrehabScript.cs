@@ -17,6 +17,9 @@ public class InstantiatePrehabScript : MonoBehaviour
 
     Vector3 Direction1;
 
+    SoundManagerScript soundscript;
+
+    public GameObject gamemanager;
     //[SerializeField] Material Red, Green, Blue;
 
     public bool PrehabOn;
@@ -35,6 +38,8 @@ public class InstantiatePrehabScript : MonoBehaviour
         PrehabOn = false;
 
         Direction1 = TargetPos1.position - StartPos.position;
+
+        soundscript = gamemanager.GetComponent<SoundManagerScript>();
     }
 
     // Update is called once per frame
@@ -66,7 +71,8 @@ public class InstantiatePrehabScript : MonoBehaviour
                 ChargeUp = false;
             }
 
-            // ‚±‚±‚É‰¹—Š‚Þ
+            soundscript.PlayerSound(1);-
+
 
             /*
             NewMaterial = NewPrehab.GetComponent<MeshRenderer>();
