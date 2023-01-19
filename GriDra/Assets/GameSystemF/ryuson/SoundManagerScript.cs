@@ -127,7 +127,7 @@ public class SoundManagerScript : MonoBehaviour
         switch (type)
         {
             case 1:
-                audioSource = Righthand.GetComponent<AudioSource>();  //ã‚Å‚ÌéŒ¾‚É‚¨‚¢‚Äint‚¾‚¯‚Å‚È‚­gameobj‚à‚â‚Á‚Ä’Ê‚é‚©”Û‚©
+                //audioSource = Righthand.GetComponent<AudioSource>();  //ã‚Å‚ÌéŒ¾‚É‚¨‚¢‚Äint‚¾‚¯‚Å‚È‚­gameobj‚à‚â‚Á‚Ä’Ê‚é‚©”Û‚©
                 audioSource.PlayOneShot(house);  //‰Æ“|‰ó
                 break;
             case 2:
