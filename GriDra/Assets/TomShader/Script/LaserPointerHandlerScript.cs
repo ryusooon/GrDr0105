@@ -38,14 +38,14 @@ public class LaserPointerHandlerScript : MonoBehaviour
         }
 
         //対象のオブジェクトがEndButtonの場合ボタンを赤くしアプリを閉じる　StartSceneに遷移
-        if (e.target.name == "EndButton")
-        {
-            GameObject endbutton = GameObject.Find("EndButton");
-            endbutton.GetComponent<Renderer>().material.color = Color.red;
-            UnityEditor.EditorApplication.isPlaying = false;
-            Application.Quit(); //ゲーム終了
-            //SceneManager.LoadScene("StartScene");
-        }
+        //if (e.target.name == "EndButton")
+        //{
+        //    GameObject endbutton = GameObject.Find("EndButton");
+        //    endbutton.GetComponent<Renderer>().material.color = Color.red;
+        //    UnityEditor.EditorApplication.isPlaying = false;
+        //    Application.Quit(); //ゲーム終了
+        //    //SceneManager.LoadScene("StartScene");
+        //}
 
         //対象のオブジェクトがBuckToTitolButtonの場合ボタンを赤くしStartSceneに遷移
         //if (e.target.name == "BuckToTitolButton")
