@@ -71,7 +71,7 @@ public class InstantiatePrehabScript : MonoBehaviour
                 ChargeUp = false;
             }
 
-            soundscript.PlayerSound(1);-
+            soundscript.PlayerSound(1);
 
 
             /*
