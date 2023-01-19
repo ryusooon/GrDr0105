@@ -5750,6 +5750,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 106.86667
+    functionName: PrintEvent
+    data: kouhan
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 113.583336
     functionName: PrintEvent
     data: tail
@@ -5799,9 +5806,23 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 200.41667
+    functionName: PrintEvent
+    data: yarare
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 202.11667
     functionName: PrintEvent
     data: tail
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 202.86667
+    functionName: PrintEvent
+    data: end
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

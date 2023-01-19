@@ -7,14 +7,17 @@ public class SoundManagerScript : MonoBehaviour
 
     public AudioClip Magicsound;  //‚±‚±‚ÉŽg‚¤Ží—Þ‚¾‚¯‰¹‚ð’Ç‰Á‚µ‚Ä‚¢‚­
     public AudioClip BGM;
+    public AudioClip BGM2;
+    public AudioClip BGM3;
     public AudioClip impact;
     //public AudioClip avoid;
     public AudioClip tailatk;
 
     public AudioClip wing;  
     public AudioClip bark;
+    public AudioClip dead;
     //public AudioClip fear;
-   // public AudioClip final;
+    // public AudioClip final;
 
     public AudioClip fireball;
     //public AudioClip firebless;
@@ -55,7 +58,7 @@ public class SoundManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        BGMS(1);
     }
 
     // Update is called once per frame
@@ -83,6 +86,9 @@ public class SoundManagerScript : MonoBehaviour
             case 4:
                 audioSource.PlayOneShot(fireball);
                 break;
+            case 5:
+                audioSource.PlayOneShot(dead);
+                break;
 
             default: break;
         }
@@ -97,7 +103,7 @@ public class SoundManagerScript : MonoBehaviour
         }
 
 
-        audioSource = Righthand.GetComponent<AudioSource>();  //‘Î‰ž‚µ‚½gameobject‚ÉŠÖ‚µ‚Ä‚Æ‚é
+        audioSource = body.GetComponent<AudioSource>();  //‘Î‰ž‚µ‚½gameobject‚ÉŠÖ‚µ‚Ä‚Æ‚é
         switch (type)
         {
             case 1:
@@ -132,5 +138,26 @@ public class SoundManagerScript : MonoBehaviour
         }
     }
 
+    public void BGMS(int type)
+    {
+        audioSource = PlayerHead.GetComponent<AudioSource>();
+        switch (type)
+        {
+            
+            case 1:
+                audioSource.PlayOneShot(BGM);  
+                break;
+            case 2:
+                audioSource.Stop();
+                audioSource.PlayOneShot(BGM2);
+                break;
+            case 3:
+                audioSource.Stop();
+                audioSource.PlayOneShot(BGM3);
+                break;
+
+            default: break;
+        }
+    }
 
 }

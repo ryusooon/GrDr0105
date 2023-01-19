@@ -12,7 +12,8 @@ public class backfireScript : MonoBehaviour
     public GameObject head;
     public GameObject TowerObj;
 
-    Vector3 headpos;
+    Vector3 headp;
+    Vector3 locp;
 
     private int pate = 0;
     private bool cons = false;
@@ -22,7 +23,7 @@ public class backfireScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        locp = new Vector3(0.0f, 3000.0f, 5.0f);
     }
 
     // Update is called once per frame
@@ -70,7 +71,8 @@ public class backfireScript : MonoBehaviour
 
             TowerObj.tag = "DrAtkObj";
             
-            Vector3 headp = head.transform.position;
+             headp = head.transform.position + locp;
+            //Vector3 locp = new Vector3(0.0f,10.0f,5.0f);
 
             Instantiate(FireObj, headp, Quaternion.identity);
 
@@ -83,7 +85,7 @@ public class backfireScript : MonoBehaviour
             //Fobj.transform.LookAt(Tower, Vector3.forward);
             //rb_Fobj.AddForce(transform.forward * 25f);
 
-            Destroy(Fobj, 10f);
+            Destroy(Fobj, 5f);
             pate = 2;
             
         }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4138467684527516907}
   - component: {fileID: -85369365726960988}
   - component: {fileID: 103394410709087150}
+  - component: {fileID: 9188287886190465971}
   m_Layer: 10
   m_Name: DrFire
   m_TagString: Drtama
@@ -96,7 +97,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.53
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-85369365726960988
 Rigidbody:
@@ -130,6 +131,103 @@ MonoBehaviour:
   head: {fileID: 724540658604359126, guid: 28562c54c13ce1e44a2acc7f63cec4d4, type: 3}
   gamemanager: {fileID: 8064563104863921801, guid: b32a8b7a2c4944a48b412bb179bad196, type: 3}
   Tracking: 1
+  Pos: {fileID: 919132149155446097, guid: 13eec1d2a494b004ca93b4a891da61c5, type: 3}
+--- !u!82 &9188287886190465971
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380846293888938189}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: be4092ac75b0fc14bbfb8738eb4e42bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 10
+  MaxDistance: 50
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &5288674061339843121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,13 +287,37 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1462416277822131668, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462416277822131668, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1462416277822131671, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1462416277939071540, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1462416277939071543, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462416278871249611, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462416278871249611, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462416278871249611, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1462416278871249613, guid: 4dd9677f9c33b2c4fb7215949a46a053, type: 3}
       propertyPath: m_Layer

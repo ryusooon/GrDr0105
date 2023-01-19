@@ -16,10 +16,18 @@ public class tuibitestScript : MonoBehaviour
     private Rigidbody Rb;
     public bool Tracking = true;
 
+    public GameObject Pos;
+    Vector3 headp;
+    Vector3 locp;
+
     // Start is called before the first frame update
     void Start()
     {
         // Fobj = this.gameObject;
+        locp = new Vector3(0.0f, 30.0f, 5.0f);
+
+        //headp = Pos.transform.position;
+        //this.transform.position = headp;
 
         tag = GameObject.FindWithTag("target");Å@Å@
 
