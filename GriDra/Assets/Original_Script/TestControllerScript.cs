@@ -52,6 +52,8 @@ public class TestControllerScript : MonoBehaviour
 
     GetAccel Get;
 
+    [SerializeField] TouchPadScript TouPadSc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,8 +78,8 @@ public class TestControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // スタン状態じゃない場合
-        if (!ColDetSc.Stan)
+        // スタン状態じゃない場合 かつポーズ中じゃない
+        if (!ColDetSc.Stan && TouPadSc.game)
         {
 
             // トリガー入力中の処理

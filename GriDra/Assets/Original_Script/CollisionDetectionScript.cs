@@ -7,13 +7,13 @@ public class CollisionDetectionScript : MonoBehaviour
 {
 
     public bool Stan;
-    public int StanTime;
+    public float StanTime;
 
     SoundManagerScript soundscript;
 
     public GameObject gamemanager;
 
-    int Time;
+    float Time;
 
     private SteamVR_Action_Single squeeze = SteamVR_Actions.default_Squeeze;
     private SteamVR_Action_Vibration vibration = SteamVR_Actions.default_Haptic;
@@ -27,13 +27,13 @@ public class CollisionDetectionScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+     void FixedUpdate()
     {
 
         if (Stan) // スタン状態の場合
         {
 
-            if (Time <= StanTime)
+            if (Time < StanTime)
             {
                 // スタンタイムより時間経過していなければ
                 vibration.Execute(0, 0.2f, 150, 0.5f, SteamVR_Input_Sources.RightHand);
@@ -49,12 +49,13 @@ public class CollisionDetectionScript : MonoBehaviour
 
         }
 
-    }
+        Debug.Log("スタン時のタイム：" + Time);
 
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Cubes")
+        if (other.gameObject.tag == "Drtama")
         {
             Stan = true;
             //Debug.Log("ぶつかった！");
