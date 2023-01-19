@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.Extras;
+using UnityEngine.SceneManagement;
 
 public class TouchPadScript : MonoBehaviour
 {
@@ -39,10 +40,17 @@ public class TouchPadScript : MonoBehaviour
     public bool Touch_Up, Touch_Down;
     //[SerializeField] CountDown CouDoSc;
 
+    public bool game;
+
     // Start is called before the first frame update
     void Start()
     {
         slScript = Righthand.GetComponent<SteamVR_LaserPointer>();//林
+
+
+        Debug.Log("リセット");
+
+        game = true;
     }
 
     // Update is called once per frame
@@ -78,42 +86,79 @@ public class TouchPadScript : MonoBehaviour
             Debug.Log("下触ってる");
         }
 
-
-        if (Teleport.GetStateDown(hand))
+        if (game == false)
         {
-            //トラックパッドが押されたらtimeScaleを0.01にして、Pause画面を表示
-            //Time.timeScale = 0.01f; //冨岡
-            //countCanv.SetActive(true); //冨岡
-            //closeButton.SetActive(true);
-            //buckButton.SetActive(true);
+            Debug.Log("gameはfalse");
 
-            //GameObject line = GameObject.Find("New Game Object"); //林
-            //line = slScript.line;                                 //林
+            //if(Touch_Up && Teleport.GetStateDown(hand))
+            if (Touch_Up)
+            {
+                Debug.Log("gameがfalse中に上");
 
-            slScript.line.SetActive(true);//林
+                if (Teleport.GetStateDown(hand))
+                {
+                    game = true;
+                    countObj.GetComponent<CountDown>().enabled = true;
+                    Debug.Log("カウントダウン開始");
+                }
+            }
+            //else if(Touch_Down && Teleport.GetStateDown(hand))
+            else if (Touch_Down)
+            {
+                Debug.Log("gameがfalse中に下");
 
-            //line.SetActive(true);　//林
-
-            //リセット処理切り替え
-            ToX1.ReSet = !ToX1.ReSet;
-            ToZ2.ReSet = !ToZ2.ReSet;
-
-            //TrackPadTouch = !TrackPadTouch;
-            Debug.Log("パッド入力！");
+                if (Teleport.GetStateDown(hand))
+                {
+                    Time.timeScale = 1.0f;
+                    game = true;
+                    SceneManager.LoadScene("StartScene");
+                    Debug.Log("タイトル画面へ遷移");
+                }
+            }
         }
-        else if (Teleport.GetStateUp(hand))
+        else if(game == true)
         {
-            //リセット処理切り替え
-            //ToX1.ReSet = !ToX1.ReSet;
-            //ToZ2.ReSet = !ToZ2.ReSet;
+            if (Teleport.GetStateDown(hand))
+            {
+                Debug.Log("パッド入力！");
 
-            //TrackPadTouch = !TrackPadTouch;
-            Debug.Log("パッドから指を放した！");
+                //リセット処理切り替え
+                ToX1.ReSet = !ToX1.ReSet;
+                ToZ2.ReSet = !ToZ2.ReSet;
+
+                //トラックパッドが押されたらtimeScaleを0.01にして、Pause画面を表示
+                game = false;
+                Time.timeScale = 0.01f; //冨岡
+                countCanv.SetActive(true); //冨岡
+                closeButton.SetActive(true);
+                buckButton.SetActive(true);
+
+                //GameObject line = GameObject.Find("New Game Object"); //林
+                //line = slScript.line;                                 //林
+
+                slScript.line.SetActive(true);//林
+
+                //line.SetActive(true);　//林
+
+                TrackPadTouch = !TrackPadTouch;
+
+            }
+
+            if (Teleport.GetStateUp(hand))
+            {
+                //リセット処理切り替え
+                ToX1.ReSet = !ToX1.ReSet;
+                ToZ2.ReSet = !ToZ2.ReSet;
+
+                TrackPadTouch = !TrackPadTouch;
+                Debug.Log("パッドから指を放した！");
+            }
+
+            Debug.Log("gameはture");
         }
 
 
-
-        //Debug.Log("パッド状況" + TrackPadTouch);
+        Debug.Log("パッド状況" + TrackPadTouch);
 
         //pos = TrackPad.GetLastAxis(SteamVR_Input_Sources.RightHand);
         //r = Mathf.Sqrt(pos.x * pos.x + pos.y * pos.y);

@@ -42,10 +42,6 @@ public class CountDown : MonoBehaviour
         Count = GameObject.Find("Image").GetComponent<Image>();
         Count.enabled = false;
         countobj.GetComponent<CountDown>().enabled = false;
-
-        ToX1.ReSet = !ToX1.ReSet;
-        ToZ2.ReSet = !ToZ2.ReSet;
-
         //slScript = Righthand.GetComponent<SteamVR_LaserPointer>();//林
     }
 
@@ -103,8 +99,6 @@ public class CountDown : MonoBehaviour
             countcanv.SetActive(false);
             Time.timeScale = 1.0f;
             countTime = 4.0f;
-
-            
         }
 
         //タイマー(countTime)が4の時pauseを表示する
@@ -115,9 +109,6 @@ public class CountDown : MonoBehaviour
                 Count.sprite = menu;
                 Pauseimg.enabled = true;
                 Pauseimg.sprite = pause;
-
-                
-
             }
         }
     }
