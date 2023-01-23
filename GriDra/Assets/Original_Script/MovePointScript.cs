@@ -21,6 +21,8 @@ public class MovePointScript : MonoBehaviour
     public Transform plane;
     public Vector3 Rote;
 
+    int count;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,8 @@ public class MovePointScript : MonoBehaviour
 
         StandardPos = To_Sphere.position;
         Y_Difference = StandardPos.y - BoxPosvec.y;
+
+        count = 0;
     }
 
     // Update is called once per frame
@@ -68,6 +72,14 @@ public class MovePointScript : MonoBehaviour
 
         // Œ»İ‚ÌˆÊ’u‚É‰ÁZ‚µ‚Ä”½‰f‚³‚¹‚é
         PointBox.position = BoxPosvec + tmp;
+
+        // ‰ŠúƒŠƒZƒbƒg—p
+        count++;
+
+        if (count >= 0 && count <= 4)
+        {
+            ReSet = !ReSet;
+        }
 
     }
 
