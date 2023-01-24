@@ -61,7 +61,7 @@ public class InstantiatePrehabScript : MonoBehaviour
             {
                 //NewPrehab = Instantiate(ShotPrehab, StartPos.position, Quaternion.identity);
                 NewPrehab = Instantiate(Prehab, StartPos.position, Quaternion.identity);
-                NewPrehab.transform.localScale = new Vector3(ScaleCount, ScaleCount, ScaleCount);
+                //NewPrehab.transform.localScale = new Vector3(ScaleCount, ScaleCount, ScaleCount);
 
                 ChargeUp = false;
             }
