@@ -36,7 +36,6 @@ public class CollisionDetectionScript : MonoBehaviour
             if (Time < StanTime)
             {
                 // スタンタイムより時間経過していなければ
-                vibration.Execute(0, 0.2f, 150, 0.5f, SteamVR_Input_Sources.RightHand);
                 Time++;
             }
             else
@@ -44,7 +43,6 @@ public class CollisionDetectionScript : MonoBehaviour
                 // スタンタイム分時間経過したら
                 Stan = false;
                 Time = 0;
-
             }
 
         }
@@ -55,9 +53,15 @@ public class CollisionDetectionScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Drtama")
+        if (other.gameObject.tag != "Cubes")
         {
             Stan = true;
+            float VibrationTime = (StanTime / 100f) + 0.3f;
+
+            /*Execute(float secondsFromNow：現在の時刻からアクションを実行するまでの時間0から設定可, float durationSeconds：どのぐらい振動が続くか（秒単位）, 
+            　float frequency：どのぐらいの頻度で振動が発生するか（0 - 320hz）0がお勧めらしい, float amplitude：振動の強さ（0 - 1）) 各数値のあとのfはflootの宣言*/
+            vibration.Execute(0, VibrationTime, 150f, 0.5f, SteamVR_Input_Sources.RightHand);
+
             //Debug.Log("ぶつかった！");
         }
         else
