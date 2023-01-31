@@ -7,7 +7,7 @@ using Valve.VR;
 
 public class CountDown : MonoBehaviour
 {
-    public GameObject timer_object = null;
+    //public GameObject timer_object = null;
     public float countTime = 4.0f;
     int seconds;
 

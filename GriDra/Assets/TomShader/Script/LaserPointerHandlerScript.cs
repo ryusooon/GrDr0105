@@ -18,7 +18,7 @@ public class LaserPointerHandlerScript : MonoBehaviour
     private SteamVR_LaserPointer slScript;Å@//ó—
     private GameObject line;
 
-    private void Awake()
+    void Awake()
     {
         laserPointer.PointerIn += PointerInside;
         laserPointer.PointerOut += PointerOutside;

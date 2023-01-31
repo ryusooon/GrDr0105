@@ -136,7 +136,7 @@ public class TouchPadScript : MonoBehaviour
                 //GameObject line = GameObject.Find("New Game Object"); //ó—
                 //line = slScript.line;                                 //ó—
 
-                slScript.line.SetActive(true);//ó—
+                //slScript.line.SetActive(true);//ó—
 
                 //line.SetActive(true);Å@//ó—
 
