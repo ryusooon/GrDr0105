@@ -53,7 +53,7 @@ public class CollisionDetectionScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Cubes")
+        if (other.gameObject.tag == "Drtama" || other.gameObject.tag == "Rubble")
         {
             Stan = true;
             float VibrationTime = (StanTime / 100f) + 0.3f;
@@ -63,12 +63,14 @@ public class CollisionDetectionScript : MonoBehaviour
             vibration.Execute(0, VibrationTime, 150f, 0.5f, SteamVR_Input_Sources.RightHand);
 
             //Debug.Log("Ç‘Ç¬Ç©Ç¡ÇΩÅI");
+            Debug.Log(other.name + "Ç…Ç‘Ç¬Ç©Ç¡ÇΩÅI");
         }
         else
         {
 
             //Debug.Log("êßå¿ï«Ç…Ç‘Ç¬Ç©Ç¡ÇΩÅI");
         }
+
     }
 
 }
