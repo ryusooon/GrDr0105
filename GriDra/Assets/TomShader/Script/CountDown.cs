@@ -40,8 +40,8 @@ public class CountDown : MonoBehaviour
     void Start()
     {
         Count = GameObject.Find("Image").GetComponent<Image>();
-        Count.enabled = false;
-        countobj.GetComponent<CountDown>().enabled = false;
+        Count.enabled = true;
+        countobj.GetComponent<CountDown>().enabled = true;
         //slScript = Righthand.GetComponent<SteamVR_LaserPointer>();//—Ñ
     }
 

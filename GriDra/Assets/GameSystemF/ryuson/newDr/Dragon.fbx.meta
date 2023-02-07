@@ -33,7 +33,32 @@ ModelImporter:
   - first:
       74: -861674006186942010
     second: Tsuiraku_Loop
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface1
+    second: {fileID: 2100000, guid: 73b9e32c00022b54bbaf87693a29cca1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface2
+    second: {fileID: 2100000, guid: 73b9e32c00022b54bbaf87693a29cca1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface3
+    second: {fileID: 2100000, guid: d2f447f38b9440949b3bcdf78a2f4f48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface5
+    second: {fileID: 2100000, guid: 05d3ebc8845552d4f8295e2aefa8ff21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface6
+    second: {fileID: 2100000, guid: 0b39161cac4e71b489ee04cf96fb8edd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
