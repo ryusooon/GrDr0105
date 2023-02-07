@@ -25,7 +25,7 @@ public class ResultScript : MonoBehaviour
 
     int score;
 
-    public GameObject endButton;
+    //public GameObject endButton;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,7 @@ public class ResultScript : MonoBehaviour
         gamemanager = GM.GetComponent<GameManagerScript>();
         //score = ; //←ここに他スクリプトからもってきたスコアを代入
         resultCanv.SetActive(false);
-        endButton.SetActive(false);
+        //endButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class ResultScript : MonoBehaviour
     {
         testcon.enabled = false;
 
-        endButton.SetActive(true);
+        //endButton.SetActive(true);
         score = gamemanager.tmp; //←ここに他スクリプトからもってきたスコアを代入
         resultCanv.SetActive(true);
         Result.enabled = true;

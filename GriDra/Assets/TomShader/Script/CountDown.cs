@@ -105,8 +105,8 @@ public class CountDown : MonoBehaviour
         {
             if (countTime == 4)
             {
-                Count.enabled = true;
-                Count.sprite = menu;
+                //Count.enabled = true;
+                //Count.sprite = menu;
                 Pauseimg.enabled = true;
                 Pauseimg.sprite = pause;
             }
