@@ -115,10 +115,25 @@ public class TouchPadScript : MonoBehaviour
                     Debug.Log("タイトル画面へ遷移");
                 }
             }
+
+            //Viveなしのテスト用
+            //if (Input.GetKeyDown(KeyCode.K))
+            //{
+            //    game = true;
+            //    countObj.GetComponent<CountDown>().enabled = true;
+            //    Debug.Log("カウントダウン開始");
+            //}
+            //if (Input.GetKeyDown(KeyCode.J))
+            //{
+            //    Time.timeScale = 1.0f;
+            //    game = true;
+            //    SceneManager.LoadScene("StartScene");
+            //    Debug.Log("タイトル画面へ遷移");
+            //}
         }
         else if(game == true)
         {
-            if (Teleport.GetStateDown(hand))
+            if (Teleport.GetStateDown(hand) || Input.GetKeyDown(KeyCode.H))
             {
                 Debug.Log("パッド入力！");
 

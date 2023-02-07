@@ -140,7 +140,7 @@ public class LaserPointerHandlerScript : MonoBehaviour
     void Update()
     {
         //Viveなしのテスト用(StartSceneからの移動のみ)
-        //if(Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    Time.timeScale = 0.01f;
         //    SceneManager.LoadScene("MainScene");
