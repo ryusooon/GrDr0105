@@ -24,7 +24,7 @@ public class DranimContScript : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             //animator.SetBool("Firebool", true);
-            animator.SetTrigger("Fire");
+            animator.SetTrigger("Left");
             //Debug.Log("‚¨‚µ‚½");
         }
     }
@@ -53,8 +53,28 @@ public class DranimContScript : MonoBehaviour
             //soundscript.DragonSound(5);
             soundscript.BGMS(3);
         }
+        else if (s == "Left")
+        {
+            animator.SetTrigger("Left");            
+        }
+        else if (s == "Right")
+        {
+            animator.SetTrigger("Right");
+        }
+        else if (s == "hirumi")
+        {
+            animator.SetTrigger("hirumi);
+        }
+        else if (s == "kakku")
+        {
+            animator.SetTrigger("kakku");
+        }
+        else if (s == "kyukouka")
+        {
+            animator.SetTrigger("kyukouka");
+        }
 
-        if(s == "yarare")
+        if (s == "yarare")
 
         if (s == "kouhan")
         {
