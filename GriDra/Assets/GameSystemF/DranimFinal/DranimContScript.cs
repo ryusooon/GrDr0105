@@ -63,7 +63,7 @@ public class DranimContScript : MonoBehaviour
         }
         else if (s == "hirumi")
         {
-            animator.SetTrigger("hirumi);
+            animator.SetTrigger("hirumi");
         }
         else if (s == "kakku")
         {
