@@ -34,7 +34,7 @@ public class DranimContScript : MonoBehaviour
         //Debug.Log(s);
         if(s == "fire")
         {
-            animator.SetTrigger("Fire");
+            animator.SetTrigger("fire");
             soundscript.DragonSound(4);
         }
         else if(s == "roar")
@@ -44,12 +44,12 @@ public class DranimContScript : MonoBehaviour
         }
         else if(s == "tail")
         {
-            animator.SetTrigger("Tail");
+            animator.SetTrigger("tail");
             soundscript.DragonSound(3);
         }
         else if(s == "end")
         {
-            animator.SetTrigger("End");
+            animator.SetTrigger("end");
             //soundscript.DragonSound(5);
             soundscript.BGMS(3);
         }
@@ -74,7 +74,7 @@ public class DranimContScript : MonoBehaviour
             animator.SetTrigger("kyukouka");
         }
 
-        if (s == "yarare")
+        
 
         if (s == "kouhan")
         {
